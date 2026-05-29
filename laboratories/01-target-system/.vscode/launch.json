@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug ",
+            "type": "cortex-debug",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/bin/application.elf",
+            "servertype": "openocd",
+            "searchDir": [
+                "${workspaceFolder}",
+            ],
+            "device": "STM32F429ZI",
+            "serialNumber": "",
+            "interface": "swd",
+            "runToEntryPoint": "main",
+            "svdFile": "${workspaceRoot}/../STM32F429.svd",
+            "showDevDebugOutput": "raw",
+            "configFiles": [
+                "${workspaceRoot}/../common/openocd.cfg"
+            ]
+        }
+    ]
+}
