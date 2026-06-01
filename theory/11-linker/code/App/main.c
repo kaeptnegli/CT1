@@ -9,13 +9,13 @@
 /**
  *  \brief  Main program
  *
- *  $Id: main.c 133 2016-10-21 09:44:00Z feur $
+ *  $Id: $
  * ------------------------------------------------------------------------- */
 
 // main.c
 #include "square.h"
-static uint32_t a = 5;
-static uint32_t b = 7;
+static volatile uint32_t a = 5;
+static volatile uint32_t b = 7;
 int main(void) {
   uint32_t res;
   res = square(a) + b; // use

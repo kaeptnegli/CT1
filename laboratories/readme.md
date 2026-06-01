@@ -1,22 +1,8 @@
 # CT1 with GNU assembly syntax
 
-`STUDENTS: To be programmed`/`END: To be programmed` in source code
-files.
-
-To create a **release** for the students repository, use the prepared
-bash script. It will clone the students repository and copy the
-required, adjusted resources into said repository. This ensures, that no
-(properly tagged) solutions are pushed, and improves release
-consistency. Note that committing and tagging has to be done manually.
-<!-- solution=end -->
-
-# Table of contents
-
 <!--toc:start-->
 
 - [CT1 with GNU assembly syntax](#ct1-with-gnu-assembly-syntax)
-- [Table of contents](#table-of-contents)
-- [Setting up local repository](#setting-up-local-repository)
 - [Installing the required tools](#installing-the-required-tools)
   - [Linux](#linux)
   - [Windows](#windows)
@@ -30,37 +16,6 @@ consistency. Note that committing and tagging has to be done manually.
 - [Workflow with Visual Studio Code](#workflow-with-visual-studio-code)
   - [Debugging with Visual Studio
     Code](#debugging-with-visual-studio-code) <!--toc:end-->
-
-<!-- TODO: remove this section, after switching to mono repository -->
-
-<!-- (will contain libctboard) -->
-
-# Setting up local repository
-
-First clone this repository **locally**. Make sure this directory is
-**not** on `OneDrive` or any other network file system. Keil will not
-work otherwise and even if you do not using Keil, it is always a
-potential source of problems.
-
-> It is a good idea to make a fork of this repository. If you do so,
-> make sure to keep the repository private, so other students can find
-> the repository using the search function.
-
-> *Note:* You can register your public ssh key with your github profile
-> for easier and more secure access (pull, push, etc.) to repositories.
-
-Then get the [`libctboard`](https://github.zhaw.ch/scbj/libctboard),
-which contains the HAL (hardware abstraction layer) and startup code.
-One can just download the latest
-[release](https://github.zhaw.ch/scbj/libctboard/releases). It is
-available as both tarball (for unix-like systems) and zip file (for
-windows systems). Alternatively one can clone repository and build the
-library locally.
-
-Place the archive (`.tar.xz` or `.zip`) in the directory `./lib` and
-extract it there. The `./lib` directory should now contain directories
-containing the header files, the startup routine, the linker script and
-the archive with the precompiled object files (`libctboard.a`).
 
 # Installing the required tools
 
