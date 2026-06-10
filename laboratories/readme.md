@@ -1,5 +1,8 @@
 # CT1 with GNU assembly syntax
 
+> Do **not** fork the repository, see `../readme.(md|pdf)` for
+> instructions on how to setup a private remote repository to work with.
+
 <!--toc:start-->
 
 - [CT1 with GNU assembly syntax](#ct1-with-gnu-assembly-syntax)
@@ -46,13 +49,11 @@ uses a distribution, that does not come with these tools preinstalled
 and does not provide packages, the path of pain was chosen
 deliberately..
 
-`openocd` is relatively popular and might be packaged for your system,
-if not you follow the instructions on their
+`openocd` is relatively popular and thus be packaged on many linux
+distributions, if not you follow the instructions on their
 [website](https://openocd.org/pages/getting-openocd.html) or if the
 website is not reachable try the [official
 repository](https://sourceforge.net/p/openocd/code/ci/master/tree/).
-When using an exotic Linux distribution, one might have to compile from
-sources, again everyone chooses their one battles.
 
 > *Note:* If installing from sources, one might need to manually install
 > udev rules.
@@ -72,7 +73,12 @@ for bash to find the executables. This can be achieve with the command
 > `binutils` and `newlib`, depending on the distribution, these might be
 > separate packages and you need all of them.
 
+<!-- TODO: add instructions to setup paths for toolchains in vscode on linux -->
+
 ## Windows
+
+When using Keil, follow the instructions on the [Wiki
+(ennis)](https://ennis.zhaw.ch).
 
 ### Installing MSYS2
 
@@ -110,8 +116,8 @@ MSYS2</figcaption>
 > effort to learn it.
 >
 > If you choose to use VSCode, be careful with extensions. There have
-> been more attacks through VSCode extensions than i want count just
-> this year (2026-05-27).
+> been more supply chain attacks through VSCode extensions in just the
+> past few month than i want to count.
 
 Install [Visual Studio Code](https://code.visualstudio.com/) if it is
 not already installed.

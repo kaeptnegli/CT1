@@ -49,7 +49,7 @@ ARCHIVE :=      ./lib$(NAME).a
 
 VPATH :=        $(SRC_DIR)
 
-.PHONY: all build clean debug rebuild test
+.PHONY: all build clean debug rebuild test keil
 
 all: $(MKDIR) $(ARCHIVE)
 
@@ -75,3 +75,6 @@ $(OBJ_DIR)/%.o: %.c
 $(ARCHIVE): $(OBJ)
 	$(AR) rcs $@ $^
 	$(SIZE) $@
+
+keil: C_FLAGS += -fshort-wchar
+keil: rebuild
