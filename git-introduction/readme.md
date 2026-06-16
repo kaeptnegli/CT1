@@ -633,6 +633,27 @@ Many functions require a force push.
 **Again be very careful with force pushes**.
 
 
+<!-- TODO:
+## General rules
+
+**Do**
+
+* commit small, cohesive changes
+* commit regularly
+* create a new, well named branch for every feature
+* merge branches promply (do not let them sit for too long)
+* add a `.gitignore` with rules sensible for the project
+
+**Do not**
+
+* commit files generated from the repositories sources, files
+  generated elsewhere, which do not change, may be fine
+* force push unless it is your feature branch (there are **rare**
+  exceptions for this rule)
+* 
+-->
+
+
 ## Troubleshooting
 
 ### I lost a commit!

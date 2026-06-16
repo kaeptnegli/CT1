@@ -1,45 +1,17 @@
-//
-//  ############################################################
-//
-//                             +
-//                ---====D                        @
-//       o                    *
-//                    *              o
-//            |
-//           -O-                         =( =         +
-//      +     |                   *
-//                   ____     ________
-//                  /  _/__  / __/ __/    .
-//                 _/ // _ \/ _/_\ \             +  .
-//        *       /___/_//_/___/___/             |
-//                                       -O-         @
-//      +                                |
-//                      *
-//                   ,      .
-//           .    `
-//       @                +    `~---~~`           *
-//
-//                   *       .            o         +
-//
-//
-//     Institute of Embedded Systems
-//     Zurich University of Applied Sciences
-//     8401 Winterthur, Switzerland
-//
-//     File:      table.s
-//
-//     Purpose:   IO of values which
-//                are stored in a table.
-//
-//     Remarks:   -
-//
-//     Author(s): <{kesr,scbj}@zhaw.ch>
-//
-//     Date:      10/2016
-//                11/2025
-//
-//  ############################################################
-//
+/* ------------------------------------------------------------------
+ * --  _____       ______  _____
+ * -- |_   _|     |  ____|/ ____|
+ * --   | |  _ __ | |__  | (___    Institute of Embedded Systems
+ * --   | | | '_ \|  __|  \___ \   Zurich University of
+ * --  _| |_| | | | |____ ____) |  Applied Sciences
+ * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland
+ * --
+ * -- Description:  laboratory on switch/case in assembly
+ * --
+ * -- Author(s):    <{kesr,scbj}@zhaw.ch>
+ * --
+ * ------------------------------------------------------------------
+ */
 
 .syntax unified
 .cpu cortex-m4
@@ -67,16 +39,26 @@
 .balign 4
 
 jump_table:
-// NOTE: the labels need to be increased by one.
-// this is because the least significant bit determines the
-// instruction set after a jump.
-// in gnu assembly syntax the compiler unfortunately does not do this
-// automatically, even though the instruction set is provided at the
-// beginning of the file with `.thumb`
-// > alternatively one can remove the `+1` and add `.thumb_func`
-// > before each label
+/*
+ * NOTE: Least significant bit determines the instruction set after a
+ * jump. The directive `.thumb` at the beginning of the file tells the
+ * assembler, that this file should be translated into thumb
+ * instructions. Unfortunately the GNU assembler only regards this
+ * option for instructions, not labels. Thus one needs to tell the
+ * assembler explicitly to translate labels into thumb mode (LSB = 1).
+ * This is done with the directive `.thumb_func` which affects just
+ * the next symbol.
+ *
+ * Alternatively one can manually add one to the label:
+ * ```AS
+ * .word case_add + 1
+ * .word case_sub + 1
+ * ```
+ */
 
-    .word   case_dark + 1
+.thumb_func
+    .word   case_dark
+
 // STUDENTS: To be programmed
 
 

@@ -1,45 +1,17 @@
-//
-//  ############################################################
-//
-//                             +
-//                ---====D                        @
-//       o                    *
-//                    *              o
-//            |
-//           -O-                         =( =         +
-//      +     |                   *
-//                   ____     ________
-//                  /  _/__  / __/ __/    .
-//                 _/ // _ \/ _/_\ \             +  .
-//        *       /___/_//_/___/___/             |
-//                                       -O-         @
-//      +                                |
-//                      *
-//                   ,      .
-//           .    `
-//       @                +    `~---~~`           *
-//
-//                   *       .            o         +
-//
-//
-//     Institute of Embedded Systems
-//     Zurich University of Applied Sciences
-//     8401 Winterthur, Switzerland
-//
-//
-//     File:      table.s
-//
-//     Purpose:   sum and difference
-//
-//     Remarks:   -
-//
-//     Author(s): <{muln,scbj}@zhaw.ch>
-//
-//     Date:      09/2014
-//                01/2026
-//
-//  ############################################################
-//
+/* ------------------------------------------------------------------
+ * --  _____       ______  _____
+ * -- |_   _|     |  ____|/ ____|
+ * --   | |  _ __ | |__  | (___    Institute of Embedded Systems
+ * --   | | | '_ \|  __|  \___ \   Zurich University of
+ * --  _| |_| | | | |____ ____) |  Applied Sciences
+ * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland
+ * --
+ * -- Description:  exercise for sums and differences
+ * --
+ * -- Author(s):    <{muln,scbj}@zhaw.ch>
+ * --
+ * ------------------------------------------------------------------
+ */
 
 .syntax unified
 .cpu cortex-m4

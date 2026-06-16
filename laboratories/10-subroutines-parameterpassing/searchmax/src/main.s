@@ -1,42 +1,17 @@
-//
-//  ############################################################
-//
-//                             +
-//                ---====D                        @
-//       o                    *
-//                    *              o
-//            |
-//           -O-                         =( =         +
-//      +     |                   *
-//                   ____     ________
-//                  /  _/__  / __/ __/    .
-//                 _/ // _ \/ _/_\ \             +  .
-//        *       /___/_//_/___/___/             |
-//                                       -O-         @
-//      +                                |
-//                      *
-//                   ,      .
-//           .    `
-//       @                +    `~---~~`           *
-//
-//                   *       .            o         +
-//
-//
-//     Institute of Embedded Systems
-//     Zurich University of Applied Sciences
-//     8401 Winterthur, Switzerland
-//
-//     File:      main.s
-//
-//     Purpose:   subroutines and parameter passing exercise
-//
-//     Author(s): <{muln,scbj}@zhaw.ch>
-//
-//     Date:      10/2014
-//                02/2026
-//
-//  ############################################################
-//
+/* ------------------------------------------------------------------
+ * --  _____       ______  _____
+ * -- |_   _|     |  ____|/ ____|
+ * --   | |  _ __ | |__  | (___    Institute of Embedded Systems
+ * --   | | | '_ \|  __|  \___ \   Zurich University of
+ * --  _| |_| | | | |____ ____) |  Applied Sciences
+ * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland
+ * --
+ * -- Description:  exercise for subroutines and parameter passing
+ * --
+ * -- Author(s):    <{muln,scbj}@zhaw.ch>
+ * --
+ * ------------------------------------------------------------------
+ */
 
 .syntax unified
 .cpu cortex-m4
@@ -59,13 +34,17 @@
 .section .my_const,"a"
 
 sample_table1:
-        .word   0x00010000, 0x00011700, 0x00012088, 0x00028fa0, 0x0003f800, 0x0010cb8a, 0x00600d00, 0x009b1b12
+        .word   0x00010000, 0x00011700, 0x00012088, 0x00028fa0
+        .word   0x0003f800, 0x0010cb8a, 0x00600d00, 0x009b1b12
 sample_table2:
-        .word   0x7fffffff, 0x0000004a, 0xff0011ff, 0x4c43af28, 0xc19ac3bf, 0x00000234, 0x1d36bcde, 0x80782bc2
+        .word   0x7fffffff, 0x0000004a, 0xff0011ff, 0x4c43af28
+        .word   0xc19ac3bf, 0x00000234, 0x1d36bcde, 0x80782bc2
 sample_table3:
-        .word   0x80000001, 0x8ff804b3, 0x9b4a7786, 0xe77c082b, 0x0ad523bf, 0x4954de1c, 0x7cdee132, 0x7fff6587
+        .word   0x80000001, 0x8ff804b3, 0x9b4a7786, 0xe77c082b
+        .word   0x0ad523bf, 0x4954de1c, 0x7cdee132, 0x7fff6587
 sample_table4:
-        .word   0x8ff804b3, 0x80000001, 0x9b4a7786, 0xe77c082b, 0xc19ac3bf, 0x80782bc2, 0xb980bcde, 0xa10f7fff
+        .word   0x8ff804b3, 0x80000001, 0x9b4a7786, 0xe77c082b
+        .word   0xc19ac3bf, 0x80782bc2, 0xb980bcde, 0xa10f7fff
 
 golden_table:
         .word   0x009b1b12, 0x7fffffff, 0x7fff6587, 0xe77c082b

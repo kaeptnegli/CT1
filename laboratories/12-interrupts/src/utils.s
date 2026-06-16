@@ -1,42 +1,17 @@
-//
-//  ############################################################
-//
-//                             +
-//                ---====D                        @
-//       o                    *
-//                    *              o
-//            |
-//           -O-                         =( =         +
-//      +     |                   *
-//                   ____     ________
-//                  /  _/__  / __/ __/    .
-//                 _/ // _ \/ _/_\ \             +  .
-//        *       /___/_//_/___/___/             |
-//                                       -O-         @
-//      +                                |
-//                      *
-//                   ,      .
-//           .    `
-//       @                +    `~---~~`           *
-//
-//                   *       .            o         +
-//
-//
-//     Institute of Embedded Systems
-//     Zurich University of Applied Sciences
-//     8401 Winterthur, Switzerland
-//
-//     File:      utils.s
-//
-//     Purpose:   common procedures
-//
-//     Author(s): <{ruan,scbj}@zhaw.ch>
-//
-//     Date:      02/2015
-//                02/2026
-//
-//  ############################################################
-//
+/* ------------------------------------------------------------------
+ * --  _____       ______  _____
+ * -- |_   _|     |  ____|/ ____|
+ * --   | |  _ __ | |__  | (___    Institute of Embedded Systems
+ * --   | | | '_ \|  __|  \___ \   Zurich University of
+ * --  _| |_| | | | |____ ____) |  Applied Sciences
+ * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland
+ * --
+ * -- Description:  utilities for interrupt laboratory
+ * --
+ * -- Author(s):    <{ruan,scbj}@zhaw.ch>
+ * --
+ * ------------------------------------------------------------------
+ */
 
 .syntax unified
 .cpu cortex-m4

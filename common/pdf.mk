@@ -32,6 +32,8 @@ debug_pdf: $(PDF_FILES)
         --pdf-engine pdflatex \
         --listings \
         --template $(COMMON_DIR)/template.tex \
+        -f markdown \
+        -t pdf \
         $(VERBOSITY) \
         -o $@ \
         $<

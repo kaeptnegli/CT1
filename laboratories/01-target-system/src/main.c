@@ -1,30 +1,25 @@
 /* ------------------------------------------------------------------
- * --  _____       ______  _____                                    -
- * -- |_   _|     |  ____|/ ____|                                   -
- * --   | |  _ __ | |__  | (___    Institute of Embedded Systems    -
- * --   | | | '_ \|  __|  \___ \   Zurich University of             -
- * --  _| |_| | | | |____ ____) |  Applied Sciences                 -
- * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland     -
- * ------------------------------------------------------------------
+ * --  _____       ______  _____
+ * -- |_   _|     |  ____|/ ____|
+ * --   | |  _ __ | |__  | (___    Institute of Embedded Systems
+ * --   | | | '_ \|  __|  \___ \   Zurich University of
+ * --  _| |_| | | | |____ ____) |  Applied Sciences
+ * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland
  * --
- * -- main.c
+ * -- Description:  testproject targeting ctboard
  * --
- * -- main for CT1 P01 "CT Zielsystem"
+ * -- Author(s):    <{akdi}@zhaw.ch>
  * --
- * -- $Id: main.c 4855 2019-09-10 15:10:41Z akdi $
  * ------------------------------------------------------------------
  */
 
 #include <reg_ctboard.h>
-
 #include "utils_ctboard.h"
 
 #define ADDR_DIP_SWITCH_31_0 0x60000200
 #define ADDR_LED_31_0        0x60000100
 #define ADDR_7_SEG_DS0       0x60000110
 #define ADDR_HEX_SWITCH      0x60000211
-
-/* == main ================================================================ */
 
 int main(void)
 {

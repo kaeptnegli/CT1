@@ -1,20 +1,18 @@
-/* -----------------------------------------------------------------
- * --  _____       ______  _____                                    -
- * -- |_   _|     |  ____|/ ____|                                   -
- * --   | |  _ __ | |__  | (___    Institute of Embedded Systems    -
- * --   | | | '_ \|  __|  \___ \   Zurich University of             -
- * --  _| |_| | | | |____ ____) |  Applied Sciences                 -
- * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland     -
- * ------------------------------------------------------------------
+/* ------------------------------------------------------------------
+ * --  _____       ______  _____
+ * -- |_   _|     |  ____|/ ____|
+ * --   | |  _ __ | |__  | (___    Institute of Embedded Systems
+ * --   | | | '_ \|  __|  \___ \   Zurich University of
+ * --  _| |_| | | | |____ ____) |  Applied Sciences
+ * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland
  * --
- * -- main.c
+ * -- Description:  laboratory to examine bit manipulations
  * --
- * -- main for Computer Engineering "Bit Manipulations"
+ * -- Author(s):    <{ruan}@zhaw.ch>
  * --
- * -- $Id: main.c 744 2014-09-24 07:48:46Z ruan $
  * ------------------------------------------------------------------
  */
-//#include <reg_ctboard.h>
+
 #include "utils_ctboard.h"
 
 #define ADDR_DIP_SWITCH_31_0 ((uint32_t) 0x60000200)

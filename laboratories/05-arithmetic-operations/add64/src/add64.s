@@ -1,44 +1,17 @@
-//
-//  ############################################################
-//
-//                             +
-//                ---====D                        @
-//       o                    *
-//                    *              o
-//            |
-//           -O-                         =( =         +
-//      +     |                   *
-//                   ____     ________
-//                  /  _/__  / __/ __/    .
-//                 _/ // _ \/ _/_\ \             +  .
-//        *       /___/_//_/___/___/             |
-//                                       -O-         @
-//      +                                |
-//                      *
-//                   ,      .
-//           .    `
-//       @                +    `~---~~`           *
-//
-//                   *       .            o         +
-//
-//
-//     Institute of Embedded Systems
-//     Zurich University of Applied Sciences
-//     8401 Winterthur, Switzerland
-//
-//     File:      add64.s
-//
-//     Purpose:   64 bit addition on 32 bit architecture
-//
-//     Remarks:   -
-//
-//     Author(s): <{kesr,scbj}@zhaw.ch>
-//
-//     Date:      10/2016
-//                01/2026
-//
-//  ############################################################
-//
+/* ------------------------------------------------------------------
+ * --  _____       ______  _____
+ * -- |_   _|     |  ____|/ ____|
+ * --   | |  _ __ | |__  | (___    Institute of Embedded Systems
+ * --   | | | '_ \|  __|  \___ \   Zurich University of
+ * --  _| |_| | | | |____ ____) |  Applied Sciences
+ * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland
+ * --
+ * -- Description:  64 bit addition on 32 bit ALU
+ * --
+ * -- Author(s):    <{kesr,scbj}@zhaw.ch>
+ * --
+ * ------------------------------------------------------------------
+ */
 
 .syntax unified
 .cpu cortex-m4

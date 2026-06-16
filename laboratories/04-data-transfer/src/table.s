@@ -6,10 +6,10 @@
  * --  _| |_| | | | |____ ____) |  Applied Sciences
  * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland
  * --
- * --   Description:    exercise to practice the use of arrays in
- * --                   assembly
+ * -- Description:  exercise to practice the use of arrays in
+ * --               assembly
  * --
- * --   Author(s):      <{ruan,leiu,scbj}@zhaw.ch>
+ * -- Author(s):    <{ruan,leiu,scbj}@zhaw.ch>
  * --
  * ------------------------------------------------------------------
  */

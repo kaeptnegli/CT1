@@ -1,15 +1,15 @@
 /* ------------------------------------------------------------------
- * --  _____       ______  _____                                    -
- * -- |_   _|     |  ____|/ ____|                                   -
- * --   | |  _ __ | |__  | (___    Institute of Embedded Systems    -
- * --   | | | '_ \|  __|  \___ \   Zuercher Hochschule Winterthur   -
- * --  _| |_| | | | |____ ____) |  (University of Applied Sciences) -
- * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland     -
- * ------------------------------------------------------------------
+ * --  _____       ______  _____
+ * -- |_   _|     |  ____|/ ____|
+ * --   | |  _ __ | |__  | (___    Institute of Embedded Systems
+ * --   | | | '_ \|  __|  \___ \   Zurich University of
+ * --  _| |_| | | | |____ ____) |  Applied Sciences
+ * -- |_____|_| |_|______|_____/   8401 Winterthur, Switzerland
  * --
- * -- Project     : CT2 lab - Linking
+ * -- Description:  toggle LEDs
  * --
- * -- $Id$
+ * -- Author(s):    <{????,scbj}@zhaw.ch>
+ * --
  * ------------------------------------------------------------------
  */
 #ifndef _TOGGLE_H_
