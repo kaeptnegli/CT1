@@ -3,6 +3,7 @@ SHELL       := /usr/bin/env bash
 MD_FILES    += readme.md
 
 PDF_FILES   := $(MD_FILES:.md=.pdf)
+GFM_FILES   := $(MD_FILES:.md=.gfm)
 
 VERBOSITY   :=
 
@@ -20,12 +21,13 @@ repdf: remove_pdf pdf
 
 
 remove_pdf:
-	@rm -f $(PDF_FILES) || true
+	@rm -f $(PDF_FILES) $(GFM_FILES) || true
 
 
 debug_pdf: VERBOSITY := --verbose
 debug_pdf: $(PDF_FILES)
 
+gfm: $(GFM_FILES)
 
 %.pdf: %.md
 	pandoc \
@@ -38,3 +40,10 @@ debug_pdf: $(PDF_FILES)
         -o $@ \
         $<
 
+%.gfm: %.md
+	pandoc \
+        -f markdown \
+        -t gfm \
+        $(VERBOSITY) \
+        -o $@ \
+        $<
