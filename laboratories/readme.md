@@ -296,7 +296,7 @@ following targets are defined:
 ## Debugging with `GDB`
 
 To debug with GDB you first need to start the debug server. We use
-`stutil` to host a local debug server for a remote target. It can be
+`openocd` to host a local debug server for a remote target. It can be
 started with the Make target `dbgsrv`. Next launch the client in a
 separate shell instance with the Make target `launchgdb`, this will open
 GDB as interactive command line interface.
