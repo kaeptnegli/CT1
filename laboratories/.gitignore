@@ -1,0 +1,39 @@
+# ignore build artifacts
+bin/
+obj/
+
+# ignore binaries
+*.o
+*.a
+*.bin
+*.elf
+*.hex
+*.lst
+*.map
+
+# ignore libraries and headers
+lib/*
+!lib/readme.md
+
+# ignore generated pdfs and github flavoured markdown tests
+# if pdfs are needed in the repository,
+# force add the with `git add -f`
+*.pdf
+*.gfm
+
+# ignore flag files (required by clangd)
+compile_flags.txt
+
+# ignore archives
+*.tar
+*.tar.*
+*.zip
+
+# ignore inferior document types
+*.doc
+*.docx
+*.ppt
+*.pptx
+
+# ignore the students repository
+students-repository

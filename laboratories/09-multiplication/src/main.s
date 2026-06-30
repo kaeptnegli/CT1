@@ -14,8 +14,9 @@
  */
 
 .syntax unified
-.cpu cortex-m4
 .eabi_attribute 25, 1
+.arch armv6-m
+.cpu cortex-m0
 .thumb
 
 // -------------------------------------------------------------------

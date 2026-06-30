@@ -70,6 +70,9 @@ assembly instructions? Search for the corresponding op code in the list
 file and use the disassembly table to decode the hexadecimal values.
 Fill in the gaps in the following table based on the example.
 
+*Ignore the dots, they serve to keep the spacing during document
+conversion.*
+
 <table>
 <colgroup>
 <col style="width: 34%" />
@@ -90,7 +93,7 @@ Fill in the gaps in the following table based on the example.
 <code></code><br />
 <code>00100 001 11111110</code><br />
 <code>----- --- --------</code><br />
-<code>movs  r1  imm8</code><br />
+<code>movs. r1. imm8....</code><br />
 <code></code><br />
 </td>
 </tr>

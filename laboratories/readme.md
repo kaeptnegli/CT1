@@ -80,6 +80,17 @@ for bash to find the executables. This can be achieve with the command
 When using Keil, follow the instructions on the [Wiki
 (ennis)](https://ennis.zhaw.ch).
 
+> Regardless of the setup you choose you will need to install a driver
+> for the stlink, in order to detect the CT board. If you choose the
+> Keil path, the installation instructions contain a section on
+> installing the drivers too.
+>
+> You can download said driver on [STMs
+> website](https://www.st.com/en/development-tools/stsw-link009.html) or
+> for convenience from the
+> [Wiki](https://ennis.zhaw.ch/wiki/doku.php?id=software:start:getting_started),
+> so you do not have to give your email to STM.
+
 ### Installing MSYS2
 
 MSYS2 (Minimal System 2) is a software distribution and a development

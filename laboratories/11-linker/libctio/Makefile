@@ -17,10 +17,10 @@ MKDIR :=        $(OBJ_DIR)
 DBG_LEVEL :=
 OPT_LEVEL :=    -O0
 
-TARGET_FLAGS := -mcpu=cortex-m4 \
+TARGET_FLAGS := -mcpu=cortex-m0 \
                 -mthumb \
                 -mfpu=fpv4-sp-d16 \
-                -mfloat-abi=hard
+                -mfloat-abi=soft
 
 WG :=           -Wall \
                 -Wextra \

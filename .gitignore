@@ -1,0 +1,23 @@
+# ignore typical output directories
+bin/
+obj/
+RTE/
+Listings/
+Objects/
+build/
+
+# ignore output files
+*.axf
+*.bin
+*.crf
+*.elf
+*.lst
+*.map
+*.o
+*.d
+*.sct
+*.lnp
+compile_flags.txt
+
+# ignore students repository
+student-repository
