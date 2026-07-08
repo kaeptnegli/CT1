@@ -5,7 +5,12 @@ PREFIX          := arm-none-eabi-
 CC              := $(PREFIX)gcc
 COPY            := $(PREFIX)objcopy
 SIZE            := $(PREFIX)size
-GDB             := $(PREFIX)gdb
+
+ifeq ($(OS),Windows_NT)
+    GDB         := gdb-multiarch.exe
+else
+    GDB         := $(PREFIX)gdb
+endif
 
 OCD             := openocd
 
@@ -53,8 +58,8 @@ FLAGS_FILE      := ./compile_flags.txt
 
 LST_DIR         := $(BIN_DIR)/list-files
 
-LIBCTBOARD      := $(LIB_DIR)/lib/libctboard.a
-LIB_PATHS       += $(LIB_DIR)/lib
+LIBCTBOARD      := $(LIB_DIR)/libctboard.a
+LIB_PATHS       += $(LIB_DIR)
 LIB_NAMES       += ctboard
 
 LINKER_FLAGS    := $(TARGET_FLAGS) \
@@ -72,7 +77,7 @@ LINKER_FLAGS    := $(TARGET_FLAGS) \
                    -Wl,-e,Reset_Handler \
                    -Wl,--gc-sections
 
-LD_SCRIPT       := $(LIB_DIR)/lib/linker-script.ld
+LD_SCRIPT       := $(LIB_DIR)/linker-script.ld
 GDB_INIT        := $(COMMON_DIR)/.gdbinit
 OCD_CONFIG      := $(COMMON_DIR)/openocd.cfg
 

@@ -44,7 +44,7 @@ typedef enum {
  *  \param  position : Starting Position to write text.
  *  \param  text : Text to write.
  */
-void hal_ct_lcd_write(uint8_t position, char text[]);
+void hal_ct_lcd_write(uint8_t position, const char* const text);
 
 /**
  *  \brief  Set the backround color of the LCD.
@@ -52,6 +52,14 @@ void hal_ct_lcd_write(uint8_t position, char text[]);
  *  \param  value : PWM value.
  */
 void hal_ct_lcd_color(hal_ct_lcd_color_t color, uint16_t value);
+
+/**
+ *  \brief  Set the background color of the LCD as RGB value.
+ *  \param  color : color as `uint32_t` in the format 0x00RRGGBB.
+ *  the values for each channel are shifted to the left by 8
+ *  to get 16 bit values.
+ */
+void hal_ct_lcd_rgb_color(uint32_t color);
 
 /**
  *  \brief  Cleares the LCD display.

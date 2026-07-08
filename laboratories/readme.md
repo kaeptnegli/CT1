@@ -1,5 +1,10 @@
 # CT1 with GNU assembly syntax
 
+<!--
+NOTES:
+linux -> add user to group `plugdev`/`uucp`
+-->
+
 > Do **not** fork the repository, see `../readme.(md|pdf)` for
 > instructions on how to setup a private remote repository to work with.
 
@@ -54,6 +59,22 @@ distributions, if not you follow the instructions on their
 [website](https://openocd.org/pages/getting-openocd.html) or if the
 website is not reachable try the [official
 repository](https://sourceforge.net/p/openocd/code/ci/master/tree/).
+
+Make sure your user is in group `dialout` (for Debian, or Fedora based
+distributions) or `uucp` (for Arch based distributions). This is
+required to give your user access to serial devices. Use the command
+below to add your user to group.
+
+**Do not forget `-a`! It stands for ‘append’ and without it, you will
+overwrite your users groups!**
+
+``` sh
+sudo usermod -aG <group> <user>
+
+# example:
+# ($USER is a variable which expands to your username)
+sudo usermod -aG dialout $USER
+```
 
 > *Note:* If installing from sources, one might need to manually install
 > udev rules.

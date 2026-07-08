@@ -26,7 +26,7 @@
 ## Introduction
 
 In this lab you will work with assembly for the first time. You will
-learn the possibilities of the remote debugger to visualize and change
+learn the possibilities of the remote debugger to visualise and change
 the memory and register content. You will trace the influence of several
 data transfer commands and their addressing modes with the remote
 debugger.
@@ -41,7 +41,7 @@ debugger.
 
 - You can assemble, link, upload and execute an assembly program on the
   target hardware.
-- You know how to use the remote debugger, to visualize and change the
+- You know how to use the remote debugger, to visualise and change the
   content of memory, registers and ports.
 - You understand the different addressing modes in simple programs and
   are able to apply them.
@@ -138,8 +138,8 @@ conversion.*
 
 ## **Task 2** Sections
 
-The given program is split into three sections. What are the three
-sections and what are their properties?
+The given program (`./src/transbf.s`) is split into three sections. What
+are the three sections and what are their properties?
 
   
   
@@ -151,7 +151,7 @@ How many bytes does each section contain?
   
   
 
-After assembling, each section begins at the address 0x0000’0000. The
+After assembling, each section begins at the address `0x0000_0000`. The
 physical addresses are assigned during the linking process.
 
 **Uploading onto the Target Hardware**  
@@ -183,17 +183,17 @@ section(s) on debugging in the rootlevel readme.
 
 ## **Task 3** Linker tasks
 
-Open the file `build/transbf.map` file in the text editor of your choice
+Open the file `bin/transbf.map` file in the text editor of your choice
 and search for the symbol `my_code`. The associated address needs to be
 rounded to an even value. Click on Memory 1 and enter the start address
-of the main function code section in the field Address. Can you locate
-the op codes from the list file in memory?
+of the main function code section in the field ‘Address’. Can you locate
+the operation codes from the list file in memory?
 
 **Load Address**  
-By default the remote debugger loads the program at address 0x0800’0000.
-At this address the flash memory is located on the target hardware. The
-memory space from here to the beginning of the main function contains
-the initialization code for the microcontroller.
+By default the remote debugger loads the program at address
+`0x0800_0000`. At this address the flash memory is located on the target
+hardware. The memory space from here to the beginning of the main
+function contains the initialisation code for the microcontroller.
 
 ## **Task 4** Deviations
 
@@ -211,6 +211,8 @@ file. Find corresponding bytes! What could be the reason?
   
   
   
+  
+  
 
 ## Data section (READ ONLY)
 
@@ -218,7 +220,7 @@ The sample program defines several global variables in the data section
 `my_const`. The assembler directives `.word`, `.hword` and `.byte`
 reserve memory. An assembler directive is a directive of the programmer
 for the translation program, the assembler. The assembler directive does
-not get translated into executable op codes, i.e. there is no
+not get translated into executable operation codes, i.e. there is no
 corresponding op code.
 
 ## **Task 5** Memory view
@@ -227,9 +229,9 @@ The debugger will allocate the storage region of the read-only data
 section right after the read only code section. The starting address of
 this section is given by the first constant in the read only data
 section. I.e. the first constant is at label `addr_dip_switch`. Search
-this symbol in the `build/transbf.map` file for the start address of the
-respective memory area and fill in the following table with the values
-and start addresses of the given constants.
+the map file (`bin/transbf.map`) for the start address of the respective
+memory section and inspect the memory with the debugger. Fill in the
+following table with the values and start addresses of the constants.
 
 | **Variable name** | **Content** | **Start address** |
 |:------------------|:------------|:------------------|
@@ -247,7 +249,7 @@ and fills it with zero.
 
 The read-write data section of the CT Board begins in the RAM at address
 `0x2000_0000`. The stack and the heap section are inserted after this
-section. You find the respective information in the `build/transbf.map`
+section. You find the respective information in the `bin/transbf.map`
 file by searching for the symbol of the first variable of the read-write
 data section.
 
@@ -258,7 +260,7 @@ to load and store values. It shows how constants are defined and loaded,
 and how the load and store commands are used.
 
 Study the code in the list file. What are the results of the indicated
-instructions? Fill in the fol- lowing table with the expected values of
+instructions? Fill in the following table with the expected values of
 the target registers after the corresponding line of code has been
 executed.
 

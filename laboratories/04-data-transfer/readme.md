@@ -95,7 +95,7 @@ input index works as intended.
 
 Allocate memory in the data section for a table with 16 byte values
 (assembly directive `SPACE`). Be aware of the fact, that the elements
-are not initialized when the program starts. Store the previously read
+are not initialised when the program starts. Store the previously read
 input values at the correct position in the table (input index).
 
 You can test your program by observing your array via the memory view,

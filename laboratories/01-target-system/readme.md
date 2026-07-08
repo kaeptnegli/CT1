@@ -126,7 +126,7 @@ program. Check the correct function of your program with different
 positions of the dip switches.
 
 > - Read the root level readme for instructions on these steps.
-> - Familiarize yourself with the features of the debugger like “Single
+> - Familiarise yourself with the features of the debugger like “Single
 >   Stepping” and “Breakpoints”.
 > - Checkout the Register View. It displays the contents of the
 >   processors registers at every step.

@@ -17,11 +17,9 @@ INC_DIR         := ./device/include \
 
 OBJ_DIR         := ./obj
 
-LIB_DIR         := ./lib
-
 TEMP_DIR        := ./temp
 
-MK_DIR          := $(OBJ_DIR) $(LIB_DIR)
+MK_DIR          := $(OBJ_DIR)
 
 DBG_LEVEL       := -g3
 OPT_LEVEL       := -O0
@@ -90,7 +88,7 @@ C_SRC           := system_ctboard.c \
 OBJ             := $(addprefix $(OBJ_DIR)/, $(AS_SRC:.s=.o)) \
                    $(addprefix $(OBJ_DIR)/, $(C_SRC:.c=.o))
 
-LIBRARY         := $(LIB_DIR)/lib$(NAME).a
+LIBRARY         := lib$(NAME).a
 
 TAR_ARCHIVE     := $(basename $(LIBRARY)).tar.xz
 ZIP_ARCHIVE     := $(basename $(LIBRARY)).zip
@@ -98,24 +96,26 @@ ZIP_ARCHIVE     := $(basename $(LIBRARY)).zip
 TAR_CONTENTS    := $(LIBRARY) \
                    startup.s \
                    linker-script.ld \
-                   $(shell find device -name "*.h") \
-                   $(shell find hal -name "*.h")
+                   $(shell find ./device/ -name "*.h") \
+                   $(shell find ./hal/ -name "*.h")
 
 VPATH           := $(SRC_DIR)
 
-.PHONY: all build clean rebuild test
+.PHONY: all build clean lib rebuild test
 
-all: $(MK_DIR) $(LIBRARY) $(TAR_ARCHIVE) $(ZIP_ARCHIVE)
+all: $(MK_DIR) $(LIBRARY)
 
 build: all
 
 clean:
-	-rm -rf $(MK_DIR) $(TEMP_DIR)
+	-rm -rf $(MK_DIR) $(TEMP_DIR) $(TAR_ARCHIVE) $(ZIP_ARCHIVE)
+
+lib: $(TAR_ARCHIVE) $(ZIP_ARCHIVE)
 
 rebuild: clean all
 
 $(MK_DIR):
-	mkdir -p $@
+	mkdir -p $(MK_DIR)
 
 $(OBJ_DIR)/%.o: %.s
 	$(CC) $(AS_FLAGS) -c $< -o $@
@@ -128,20 +128,15 @@ $(LIBRARY): $(OBJ)
 	$(SIZE) $@
 
 $(TAR_ARCHIVE): $(TAR_CONTENTS)
-	@tar -cf \
+	tar -cf \
         $@ \
         -a \
-        --transform='s|lib/||' \
-        --transform='s|.*/source/||' \
         $^
-	@tar -xf \
-        $@ \
-        -C $(LIB_DIR)
 
 $(ZIP_ARCHIVE): $(TAR_ARCHIVE)
-	@mkdir -p $(TEMP_DIR)
-	@tar -xf $< -C $(TEMP_DIR)
-	@pushd $(TEMP_DIR); \
+	mkdir -p $(TEMP_DIR)
+	tar -xf $< -C $(TEMP_DIR)
+	pushd $(TEMP_DIR); \
         zip -r "$(shell pwd)/$@" .; \
         popd
-	@rm -rf $(TEMP_DIR)
+	rm -rf $(TEMP_DIR)

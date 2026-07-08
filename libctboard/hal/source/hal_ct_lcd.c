@@ -32,13 +32,14 @@
 /*
  * See header file
  */
-void hal_ct_lcd_write(uint8_t position, char text[])
+void hal_ct_lcd_write(uint8_t position, const char* const text)
 {
     uint8_t i = 0u;
 
     /* Send text */
     while(position < 40u && text[i] != 0u) {
-        CT_LCD->ASCII[position++] = text[i++];
+        CT_LCD->ASCII[position++] = text[i];
+        i++;
     }
 }
 
@@ -61,6 +62,18 @@ void hal_ct_lcd_color(hal_ct_lcd_color_t color, uint16_t value)
             CT_LCD->BG.BLUE = value;
             break;
     }
+}
+
+/* set lcd background color as RGB value */
+void hal_ct_lcd_rgb_color(uint32_t color)
+{
+    uint16_t red   = (uint16_t)(color >> 16u) & 0xFFu;
+    uint16_t green = (uint16_t)(color >>  8u) & 0xFFu;
+    uint16_t blue  = (uint16_t)(color >>  0u) & 0xFFu;
+
+    CT_LCD->BG.RED   = red   << 8u;
+    CT_LCD->BG.GREEN = green << 8u;
+    CT_LCD->BG.BLUE  = blue  << 8u;
 }
 
 
