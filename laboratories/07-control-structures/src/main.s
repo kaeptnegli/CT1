@@ -105,10 +105,12 @@ case_switch:                        // implement switch statement as shown on le
     // - operand 2 in r1
     // - result in r0
 
+.thumb_func
 case_dark:
     movs r0, #0
     b    display_result
 
+.thumb_func
 case_add:
     adds r0, r0, r1
     b    display_result

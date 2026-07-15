@@ -16,10 +16,10 @@
             "serialNumber": "",
             "interface": "swd",
             "runToEntryPoint": "main",
-            "svdFile": "${workspaceRoot}/../STM32F429.svd",
+            "svdFile": "${workspaceRoot}/../../../common/STM32F429.svd",
             "showDevDebugOutput": "raw",
             "configFiles": [
-                "${workspaceRoot}/../common/openocd.cfg"
+                "${workspaceRoot}/../../../common/openocd.cfg"
             ]
         }
     ]
