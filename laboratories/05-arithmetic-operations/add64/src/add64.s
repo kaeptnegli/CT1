@@ -36,17 +36,17 @@
 // ------------------------------------------------------------------
 // -- myCode
 // ------------------------------------------------------------------
-.section my_code, "ax"
+.section .my_code, "ax"
+.balign 4
 
 main:
-
-user_prog:
         ldr     r7, =ADDR_LCD_BLUE              // load base address of pwm blue
         ldr     r6, =BACKLIGHT_FULL             // backlight full blue
         strh    r6, [r7]                        // write pwm register
 
-        ldr     r0, =0                          // lower 32 bits of total sum
-        ldr     r1, =0                          // higher 32 bits of total sum
+        movs    r0, #0                          // lower 32 bits of total sum
+        movs    r1, #0                          // higher 32 bits of total sum
+
 endless:
         bl      waitForKey                      // wait for key T0 to be pressed
 
@@ -67,7 +67,7 @@ endless:
 // wait for key to be pressed and released
 waitForKey:
         push    {r0, r1, r2}
-        ldr     r1, =ADDR_BUTTONS               // laod base address of keys
+        ldr     r1, =ADDR_BUTTONS               // load base address of keys
         ldr     r2, =MASK_KEY_T0                // load key mask T0
 
 waitForPress:

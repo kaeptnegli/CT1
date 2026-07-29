@@ -1,0 +1,16 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{b<condition> label}\hfill\textit{T1}\\
+    imm8 $\in$ \immEight\ {<}{<} 1\\
+    (= distance to label)\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {1101}%
+        \bitgroup{asm-pink}     {cccc}%
+        \bitgroup{asm-purple}   {iiiiiiii}%
+    }
+    {}\\
+    if (condition) pc += imm8 {<}{<} 1;
+\end{instructionblock}
+\end{document}

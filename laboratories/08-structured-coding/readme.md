@@ -5,37 +5,45 @@
 - [Structured Programming](#structured-programming)
   - [Introduction](#introduction)
   - [Learning Objectives](#learning-objectives)
-  - [Task 1 Setup Branches](#task-1-setup-branches)
-  - [Task 2 LED bar](#task-2-led-bar)
-  - [Task 3 Sizedisplay](#task-3-sizedisplay)
-  - [Task 4 Count zeroes](#task-4-count-zeroes) <!--toc:end-->
+  - [**Task 1:** Program structure](#task-1-program-structure)
+  - [**Task 2:** LED bar](#task-2-led-bar)
+  - [**Task 3:** Size display](#task-3-size-display)
+  - [**Task 4:** Count zeroes](#task-4-count-zeroes)
+  - [Grading](#grading) <!--toc:end-->
 
 ## Introduction
 
 In this lab you will use structured programming techniques to implement
-an assembly program. Depending on the state of button T0, the
-potentiometer POT1 and the DIP switches `S7..S0` are read and compared.
-The results are displayed in various ways on the 7-segment display and
-the `LED31..0`.
+an assembly program. Depending on the state of button `T0`, the
+potentiometer `POT1` and the DIP switches `S[7..0]` are read and
+compared. The results are displayed in various ways on the 7-segment
+display and the `LED[31..0]`.
 
 ## Learning Objectives
 
 - You are able to structure a given problem using a diagram.
-- You are able to convert from a diagram into readable assembly code.
+- You are able to convert from a structure diagram into correct assembly
+  code.
 
-## Task 1 Setup Branches
+## **Task 1:** Program structure
 
 Draw a diagram with the following functionality and then implement it in
-assembly. \* The program shall read the ADC-value using the given
-function `adc_get_value()` and store the value in a register. \* The
-program shall check the state of button T0. \* **If T0 is pressed** the
-background color of the LCD shall be set to green and the read ADC-value
-shall be displayed on the 7-segment display. \* **If T0 is *not*
-pressed** the program shall read an 8-bit value from DIP switches
-`S7..S0`. The ADC value shall be subtracted from the DIP switch value.
-The resulting difference shall be displayed on the 7-segment display. \*
-**If diff \>= 0** the background color of the LCD shall be set to blue.
-\* **If diff \< 0** the background color of the LCD shall be set to red.
+assembly.
+
+- The program shall read the ADC-value using the given function
+  `adc_get_value()` and store the value in a register.
+- The program shall check the state of button `T0`.
+  - **If T0 is pressed** the background color of the LCD shall be set to
+    green and the read ADC-value shall be displayed on the 7-segment
+    display.
+  - **If T0 is *not* pressed** the program shall read an 8-bit value
+    from DIP switches `S[7..0]`. The ADC value shall be subtracted from
+    the DIP switch value. The resulting difference shall be displayed on
+    the 7-segment display.
+  - **If diff \>= 0** the background color of the LCD shall be set to
+    blue.
+  - **If diff \< 0** the background color of the LCD shall be set to
+    red.
 
 **Verify that all cases are implemented correctly.**
 
@@ -58,9 +66,9 @@ The resulting difference shall be displayed on the 7-segment display. \*
 >   the 32-bit register `r0`.
 > - There is a special register address available to output the content
 >   of a register as HEX on the 7-segment display. See ‘7-Segment Binary
->   Interface’ on the \[CT-Wiki\]\[link-ennis\].
+>   Interface’ on the [CT-Wiki](https://ennis.zhaw.ch).
 
-## Task 2 LED bar
+## **Task 2:** LED bar
 
 Extend the green branch (branch which sets the LCD backlight to green)
 of your diagram and assembly program (in that order). Display a LED bar
@@ -68,9 +76,10 @@ on `LEDS 31..0`, whose length scales with the ADC value.
 
     bar_length = (adc_value / 8) + 1
 
-> Remember, that a right shift is a division by `2^(shift width)`.
+> Remember, that a right shift is a division by `2^(shift width)` (for
+> unsigned numbers).
 
-## Task 3 Sizedisplay
+## **Task 3:** Size display
 
 Extend the blue branch (branch which sets the LCD backlight to blue) of
 your diagram and assembly program (in that order). The program shall
@@ -84,7 +93,7 @@ required to represent the difference on the LCD:
 > Use the given function `write_bit_ascii` to output the string ‘Bit’ to
 > the LCD. Then write the determined size to the LCD.
 
-## Task 4 Count zeroes
+## **Task 4:** Count zeroes
 
 Extend the red branch (branch which sets the LCD backlight to red) of
 your diagram and assembly program (in that order). The program shall
@@ -96,7 +105,9 @@ the second line of the LCD.
 
 | **Criteria** | **Weight** |
 |:---|:--:|
-| The diagram and program meet the requirements of [Task 1](#task-1-setup-branches). | 1/4 |
+| The diagram and program meet the requirements of [Task 1](#task-1-program-structure). | 1/4 |
 | Program meets the functionality added in [Task 2](#task-2-led-bar). | 1/4 |
-| Program meets the functionality added in [Task 3](#task-3-sizedisplay). | 1/4 |
+| Program meets the functionality added in [Task 3](#task-3-size-display). | 1/4 |
 | Program meets the functionality added in [Task 4](#task-4-count-zeroes). | 1/4 |
+
+<!-- links -->

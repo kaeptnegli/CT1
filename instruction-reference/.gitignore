@@ -1,0 +1,12 @@
+# generated files
+*.aux
+*.log
+*.pdf
+*.png
+*.svg
+*.fdb_latexmk
+*.fls
+
+# output directories
+output/
+png/

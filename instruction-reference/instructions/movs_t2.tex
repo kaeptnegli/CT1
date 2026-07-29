@@ -1,0 +1,17 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+\textbf{movs rd, rm}\hfill\textit{T2}\\
+    rd, rm $\in$ \baseregisters\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {000}%
+        \bitgroup{asm-grey}     {00}%
+        \bitgroup{asm-grey}     {00000}%
+        \bitgroup{asm-orange}   {mmm}%
+        \bitgroup{asm-green}    {ddd}%
+    }
+    {N Z}\\
+    rd = rm;
+\end{instructionblock}
+\end{document}

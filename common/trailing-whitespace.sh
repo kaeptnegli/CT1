@@ -6,6 +6,7 @@ function remove-whitespace {
     exclude_paths=(
         ".git"
         "student-repository"
+        "solution-repository"
     )
     exclude_files=(
         "*.lst"
@@ -19,6 +20,10 @@ function remove-whitespace {
         "*.pptx"
         "*.uvprojx"
         "*.uvoptx"
+        "*.aux"
+        "*.fdb_latexmk"
+        "*.fls"
+        "*.log"
     )
 
     unset help
@@ -101,7 +106,7 @@ function remove-whitespace {
         fi
     done
 
-    excludes+=(")" "-type d" "-prune" "-o")
+    excludes+=(")" "-type" "d" "-prune" "-o")
 
     for arg in "${exclude_files[@]}"; do
         excludes+=("-not" "-name" "${arg}")
@@ -110,7 +115,7 @@ function remove-whitespace {
     for arg in "${path_args[@]}"; do
         files=("$(
             find "${arg}" \
-                ${excludes[@]} \
+                "${excludes[@]}" \
                 -type f \
                 -exec grep -EIq "${grep_regex}" {} \; \
                 -print
@@ -147,9 +152,12 @@ EOF
         return 0
     fi
 
+    retval=0
     if [[ -z "${files[@]}" ]]; then
         echo "no files with trailing whitespace or dos style line endings found"
         return 0
+    else
+        retval=1
     fi
 
     if [[ -z "${no_action}" ]]; then
@@ -182,6 +190,7 @@ EOF
         done
     fi
 
+    return ${retval}
 }
 
 remove-whitespace "$@"

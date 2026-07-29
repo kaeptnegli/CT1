@@ -1,0 +1,17 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{add rd, sp, \#imm8}\hfill\textit{T1}\\
+    rd $\in$ \baseregisters\\
+    imm8 $\in$ \immEight\ {<}{<} 2\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {1010}%
+        \bitgroup{asm-grey}     {1}%
+        \bitgroup{asm-green}    {ddd}%
+        \bitgroup{asm-purple}   {iiiiiiii}%
+    }
+    {}\\
+    rd = sp + imm8 {<}{<} 2;
+\end{instructionblock}
+\end{document}

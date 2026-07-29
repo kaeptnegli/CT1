@@ -29,17 +29,21 @@ additions and subtractions on the CT Board.
 
 ## **Task 1** Sum and difference
 
+> Todays laboratory is structured into three projects. To build each
+> project with Makefiles, you need to change into the projects
+> directory, or use `make -C <path/to/project> <rule-name>`.
+
 You shall write a program that adds and subtracts two 8 bit values. To
 be able to observe the carry and overflow flags, the two 8 bit values
-will be shifted to the left by 24 bits. The right part will be filled
-with zeroes.
+will be shifted to the left by 24 bits to occupy the most significant
+eight bits of the register.
 
 Open the given project frame `sum_diff` and expand it, so that one 8 bit
-value is read from the DIP-switches S15 to S8 (operand A) and another
-from S7 to S0 (operand B). Both operands shall be expanded to 32 bit, as
-mentioned in the introduction. Display the most significant byte of the
-sum on LED7 to LED0 and the most significant byte of the difference on
-LED23 to LED16.
+wide value is read from the DIP-switches S15 to S8 (operand A) and
+another from S7 to S0 (operand B). Both operands shall be expanded to 32
+bit, as mentioned in the introduction. Display the most significant byte
+of the sum on LED7 to LED0 and the most significant byte of the
+difference on LED23 to LED16.
 
 > The instruction `LSLS` (i.e. `LSLS R1, R1, #24`) shifts the content of
 > register R1 to the left by 24 bits. The right part gets filled with
@@ -66,8 +70,8 @@ alt="In and output of values for the sum and difference" />
 difference</figcaption>
 </figure>
 
-Calculate the expected results based on the following table, i.e. sum,
-difference and flags.
+Before writing your program, calculate the expected results based on the
+following table, i.e. sum, difference and flags.
 
 ### Addition
 
@@ -106,15 +110,14 @@ against the tables.
 
 ## **Task 2** 64 Bit Addition
 
-Write an assembly program which has a 64 bit summation variable
+Extend the provided project `add64` with a 64 bit summation variable
 (unsigned interpretation). Every time you press button T0, the program
 shall read a 32 bit input value from the DIP-switches and shall add the
 read value to the summation variable. The sum shall be displayed
-continuously on the LCD display (See Figure 3). Use the provided project
-`add64`.
+continuously on the LCD display (see the image below).
 
-> Use the binary interface of the LCD display (See page LCD Binary
-> Interface on the CT-Wiki).
+> Use the binary interface of the LCD display (see page LCD Binary
+> Interface on the [CT wiki](https://ennis.zhaw.ch)).
 
 <figure>
 <img src="./resources/io-64-bit-addition.png"
@@ -130,7 +133,7 @@ word to the other.
 
 Assemble, link and load the given project arith_operations with the
 debugger. Execute the program step by step. Watch and comprehend the
-changes in the registries and flags.
+changes in the registers and flags.
 
 ## Grading
 
@@ -140,5 +143,7 @@ explain it to the lecturer.
 
 | **Criteria**                                           | **Weight** |
 |:-------------------------------------------------------|:----------:|
-| The program meets the requirements described in Task 1 |    2/4     |
-| The program meets the requirements described in Task 2 |    2/4     |
+| The program meets the requirements described in Task 1 |   2 / 4    |
+| The program meets the requirements described in Task 2 |   2 / 4    |
+
+<!-- links -->

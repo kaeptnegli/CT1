@@ -1,0 +1,691 @@
+\documentclass
+[
+    10pt,
+    a4paper,
+]
+{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage[colorlinks]{hyperref}
+\usepackage[margin=1.2cm]{geometry}
+\usepackage{listings}
+\usepackage{listingsutf8}
+
+% font selection
+\usepackage{courierten}
+\renewcommand*\familydefault{\ttdefault}
+\frenchspacing
+
+% suppress page numbering
+\pagenumbering{gobble}
+
+% suppress section numbering
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+% configure section spacing
+\makeatletter
+\renewcommand\section{\@startsection
+  {section}     % name
+  {1}           % level
+  {0pt}         % indent
+  {1.8em}       % before skip
+  {0.3ex}       % after skip
+  {\normalfont\Large\bfseries}}
+\makeatother
+
+% colour definitions
+\definecolor{asm-blue}  {HTML}{9CD0FF}
+\definecolor{asm-green} {HTML}{CCFF99}
+\definecolor{asm-grey}  {HTML}{E8E8F2}
+\definecolor{asm-orange}{HTML}{FFCC99}
+\definecolor{asm-pink}  {HTML}{FFCCFF}
+\definecolor{asm-purple}{HTML}{CCCCFF}
+\definecolor{asm-red}   {HTML}{FF9999}
+\definecolor{asm-yellow}{HTML}{FFFFCC}
+
+\definecolor{code-black}{HTML}{000000}
+\definecolor{code-grey} {HTML}{F2F2F2}
+\definecolor{code-blue} {HTML}{1F497D}
+\definecolor{code-green}{HTML}{00B050}
+\definecolor{code-faint}{HTML}{888888}
+
+% code listing configuration
+\lstdefinestyle{listingstyle}
+{
+    backgroundcolor     = \color{code-grey},
+    commentstyle        = \color{code-black}\itshape,
+    keywordstyle        = \color{code-black}\bfseries,
+    stringstyle         = \color{code-black},
+    identifierstyle     = \color{code-black},
+    basicstyle          = \ttfamily\small\color{code-black},
+    xleftmargin         = 0.45em,
+    xrightmargin        = 0.45em,
+    frame               = single,
+    framesep            = 0.45em,
+    aboveskip           = 0.7em,
+    belowskip           = 0.7em,
+    abovecaptionskip    = 0em,
+    belowcaptionskip    = 1.0em,
+    breakatwhitespace   = false,
+    breaklines          = true,
+    captionpos          = b,
+    keepspaces          = true,
+    numbers             = none,
+    showspaces          = false,
+    showstringspaces    = false,
+    showtabs            = false,
+    tabsize             = 4,
+    inputencoding       = utf8,
+    extendedchars       = true,
+    columns             = fullflexible,
+    literate=
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+    {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+    {À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+    {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+    {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+    {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+    {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+    {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+    {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+    {€}{{\EUR}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+    {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+    {…}{{\ldots}}1 {≥}{{>=}}1 {≤}{{<=}}1 {„}{{\glqq}}1 {“}{{\grqq}}1
+    {”}{{''}}1
+}
+\lstset{
+    style=listingstyle,
+}
+\lstdefinelanguage{gnu-asm}
+{
+    morecomment     =[l]{//},
+    emptylines      =1,
+    breaklines      =true,
+    basicstyle      =\ttfamily\color{black}\small,
+    commentstyle    =\ttfamily\color{code-green},
+    moredelim       =[is][\color{code-blue}]{@}{@},
+    moredelim       =[is][\color{code-faint}]{$}{$},
+}
+
+% hyperref configuration
+\hypersetup{
+    unicode=true,
+    pdfborder={0 0 0 [0 0]},
+    colorlinks=true,
+    allcolors=black,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+
+% blargh
+\def\striplabel#1.pdf{#1}
+
+% instruction block
+\newcommand{\instructionimage}[2]
+{%
+    \begin{minipage}[t]{#1}%
+        \vspace{0pt}%
+        \includegraphics[width=\textwidth]{#2}%
+        \label{\striplabel #2}%
+    \end{minipage}
+}%
+
+% constant definitions
+\newcommand{\baseregisters}{\{ R0..R7 \}}
+\newcommand{\extendedregisters}{\{ R0..R11 \}}
+
+\newcommand{\imagewidth}{\dimexpr 0.32\textwidth}
+
+% import instructions without preamble
+\newcommand{\instructionreference}{true}
+
+% begin document
+\begin{document}
+\raggedright
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Terminology}
+
+\vspace{0.6em}
+\begin{tabular}{ | p{0.25\linewidth} | p{0.65\linewidth} | }
+    \hline
+    \textbf{Term} & \textbf{Description}\\
+    \hline
+    lr, l (bit) & link register (special register)\\
+    \hline
+    pc, p (bit) & program counter (special register)\\
+    \hline
+    imm(n), i (bit) & immediate value (n bits)\\
+    \hline
+    condition, c (bit) & condition under which the instruction
+    is executed.
+    conditions are a combination of the status flags.
+    see \hyperref[label:conditions]{the chapter 'conditions'}.\\
+    \hline
+    < > & parameters in angle brackets are optional\\
+    \hline
+    $\in$ & is element of\\
+    \hline
+    $\subseteq$ & subset or equal\\
+    \hline
+\end{tabular}
+\vspace{0.9em}
+
+\includegraphics{block_layout.pdf}%
+\vspace{1.1em}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Move}
+
+\mbox{%
+    \instructionimage{\imagewidth}{mov_t1.pdf}%
+    \instructionimage{\imagewidth}{movs_t2.pdf}%
+    \instructionimage{\imagewidth}{movs_imm8_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Add}
+
+\mbox{%
+    \instructionimage{\imagewidth}{add_t2.pdf}%
+    \instructionimage{\imagewidth}{adds_t1.pdf}%
+    \instructionimage{\imagewidth}{adcs_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{adds_imm3_t1.pdf}%
+    \instructionimage{\imagewidth}{adds_imm8_t2.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Subtract}
+
+\mbox{%
+    \instructionimage{\imagewidth}{subs_t1.pdf}%
+    \instructionimage{\imagewidth}{rsbs_t1.pdf}%
+    \instructionimage{\imagewidth}{sbcs_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{subs_imm3_t1.pdf}%
+    \instructionimage{\imagewidth}{subs_imm8_t2.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Multiply}
+
+\mbox{%
+    \instructionimage{\imagewidth}{muls_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Compare}
+
+\mbox{%
+    \instructionimage{\imagewidth}{cmp_t1.pdf}%
+    \instructionimage{\imagewidth}{cmp_t2.pdf}%
+    \instructionimage{\imagewidth}{cmn_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{cmp_imm8_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Logical}
+
+\mbox{%
+    \instructionimage{\imagewidth}{ands_t1.pdf}%
+    \instructionimage{\imagewidth}{orrs_t1.pdf}%
+    \instructionimage{\imagewidth}{eors_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{bics_t1.pdf}%
+    \instructionimage{\imagewidth}{mvns_t1.pdf}%
+    \instructionimage{\imagewidth}{tst_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Shift / Rotate}
+
+\mbox{%
+    \instructionimage{\imagewidth}{lsls_t1.pdf}%
+    \instructionimage{\imagewidth}{lsrs_t1.pdf}%
+    \instructionimage{\imagewidth}{asrs_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{lsls_imm5_t1.pdf}%
+    \instructionimage{\imagewidth}{lsrs_imm5_t1.pdf}%
+    \instructionimage{\imagewidth}{asrs_imm5_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{rors_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Load}
+
+\mbox{%
+    \instructionimage{\imagewidth}{ldr_t1.pdf}%
+    \instructionimage{\imagewidth}{ldrh_t1.pdf}%
+    \instructionimage{\imagewidth}{ldrb_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{ldr_imm5_t1.pdf}%
+    \instructionimage{\imagewidth}{ldrh_imm5_t1.pdf}%
+    \instructionimage{\imagewidth}{ldrb_imm5_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{ldr_imm8_t1.pdf}%
+    \instructionimage{\imagewidth}{ldrsh_t1.pdf}%
+    \instructionimage{\imagewidth}{ldrsb_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Store}
+
+\mbox{%
+    \instructionimage{\imagewidth}{str_t1.pdf}%
+    \instructionimage{\imagewidth}{strh_t1.pdf}%
+    \instructionimage{\imagewidth}{strb_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{str_imm5_t1.pdf}%
+    \instructionimage{\imagewidth}{strh_imm5_t1.pdf}%
+    \instructionimage{\imagewidth}{strb_imm5_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Load / Store Multiple Registers}
+
+\mbox{%
+    \instructionimage{\imagewidth}{ldm_t1.pdf}%
+    \instructionimage{\imagewidth}{stm_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Push / Pop}
+
+\mbox{%
+    \instructionimage{\imagewidth}{push_t1.pdf}%
+    \instructionimage{\imagewidth}{pop_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Branch}
+
+\mbox{%
+    \instructionimage{\imagewidth}{b_imm8_t1.pdf}%
+    \instructionimage{\imagewidth}{b_imm11_t2.pdf}%
+    \instructionimage{\imagewidth}{bx_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{blx_t1.pdf}%
+    \instructionimage{1.4\imagewidth}{bl_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Stack Operations}
+
+\mbox{%
+    \instructionimage{\imagewidth}{ldr_sp_imm8_t2.pdf}%
+    \instructionimage{\imagewidth}{str_sp_imm8_t2.pdf}%
+    \instructionimage{\imagewidth}{add_sp_imm8_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{add_sp_imm7_t2.pdf}%
+    \instructionimage{\imagewidth}{sub_sp_imm7_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Extend}
+
+\mbox{%
+    \instructionimage{\imagewidth}{sxth_t1.pdf}%
+    \instructionimage{\imagewidth}{sxtb_t1.pdf}%
+}
+\vspace{0.6em}
+
+\mbox{%
+    \instructionimage{\imagewidth}{uxth_t1.pdf}%
+    \instructionimage{\imagewidth}{uxtb_t1.pdf}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Status Register}
+
+\mbox{%
+    \instructionimage{0.46\textwidth}{mrs_t1.pdf}%
+    \instructionimage{0.46\textwidth}{msr_t1.pdf}%
+}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conditions}
+\vspace{0.5em}
+\label{label:conditions}
+
+This table lists the conditions to be used with conditional
+instructions.
+In CT1 we use only one instruction with a condition, the
+\hyperref[b_imm8_t1]{branch with label T1 encoded}.
+
+Note that the conditions have distinct meaning, depending on the
+operands being unsigned or signed.
+\vspace{0.8em}
+
+{\normalsize
+\begin{tabular}
+    { | p{0.05\textwidth} | p{0.08\textwidth} | p{0.19\textwidth} | p{0.1\textwidth} | p{0.46\textwidth} | }
+    \hline
+    \textbf{bits} & \textbf{symbol} & \textbf{flags} &
+    \textbf{context} & \textbf{description}\\
+    \hline
+    \hline
+    0000 & eq       & Z == 1                & all       &
+    equal\\
+    \hline
+    0001 & ne       & Z == 0                & all       &
+    not equal\\
+    \hline
+    0010 & cs / hs  & C == 1                & unsigned  &
+    carry set / higher than or same\\
+    \hline
+    0011 & cc / lo  & C == 0                & unsigned  &
+    carry cleared / lower than\\
+    \hline
+    0100 & mi       & N == 1                & signed    &
+    minus / negative\\
+    \hline
+    0101 & pl       & N == 0                & signed    &
+    plus / positive or zero\\
+    \hline
+    0110 & vs       & V == 1                & signed    &
+    overflow set (overflow)\\
+    \hline
+    0111 & vc       & V == 0                & signed    &
+    overflow cleared (no overflow)\\
+    \hline
+    1000 & hi       & C == 1 \&\& Z == 0    & unsigned  &
+    higher than\\
+    \hline
+    1001 & ls       & C == 0 ||   Z == 1    & unsigned  &
+    lower than or same\\
+    \hline
+    1010 & ge       & N == V                & signed    &
+    greater than or equal\\
+    \hline
+    1011 & lt       & N != V                & signed    &
+    less than\\
+    \hline
+    1100 & gt       & Z == 0 \&\& N == V    & signed    &
+    greater than\\
+    \hline
+    1101 & le       & Z == 1 ||   N != V    & signed    &
+    less than or equal\\
+    \hline
+    1110 & al       &                       & all       &
+    always == no condition\\
+    \hline
+    1111 & -        &                       &           &
+    -\\
+    \hline
+\end{tabular}
+}
+
+\subsection{Flag Dependent}
+{\normalsize
+\begin{tabular}
+{ | p{0.08\textwidth} | p{0.65\textwidth} | p{0.19\textwidth} | }
+    \hline
+    \textbf{symbol} & \textbf{description} & \textbf{flags}\\
+    \hline
+    \hline
+    eq      & equal                             & Z == 1\\
+    \hline
+    ne      & not equal                         & Z == 0\\
+    \hline
+    cs      & carry set                         & C == 1\\
+    \hline
+    cc      & carry cleared                     & C == 0\\
+    \hline
+    mi      & minus / negative                  & N == 1\\
+    \hline
+    pl      & plus / positive or zero           & N == 0\\
+    \hline
+    vs      & overflow set (overflow)           & V == 1\\
+    \hline
+    vc      & overflow cleared (no overflow)    & V == 0\\
+    \hline
+\end{tabular}
+}
+
+\subsection{Arithmetic Unsigned}
+{\normalsize
+\begin{tabular}
+{ | p{0.08\textwidth} | p{0.65\textwidth} | p{0.19\textwidth} | }
+    \hline
+    \textbf{symbol} & \textbf{description} & \textbf{flags}\\
+    \hline
+    \hline
+    eq      & equal                             & Z == 1\\
+    \hline
+    ne      & not equal                         & Z == 0\\
+    \hline
+    hs (cs) & unsigned higher than or same      & C == 1\\
+    \hline
+    lo (cc) & unsigned lower than               & C == 0\\
+    \hline
+    hi      & higher than                       & C == 1 \&\& Z == 0\\
+    \hline
+    ls      & lower than or same                & C == 0 ||   Z == 1\\
+    \hline
+\end{tabular}
+}
+
+\subsection{Arithmetic Signed}
+{\normalsize
+\begin{tabular}
+{ | p{0.08\textwidth} | p{0.65\textwidth} | p{0.19\textwidth} | }
+    \hline
+    \textbf{symbol} & \textbf{description} & \textbf{flags}\\
+    \hline
+    \hline
+    eq      & equal                             & Z == 1\\
+    \hline
+    ne      & not equal                         & Z == 0\\
+    \hline
+    mi      & minus / negative                  & N == 1\\
+    \hline
+    pl      & plus / positive or zero           & N == 0\\
+    \hline
+    vs      & overflow set (overflow)           & V == 1\\
+    \hline
+    vc      & overflow cleared (no overflow)    & V == 0\\
+    \hline
+    ge      & signed greater than or equal      & N == V\\
+    \hline
+    lt      & signed less than                  & N != V\\
+    \hline
+    gt      & signed greater than               & Z == 0 \&\& N == V\\
+    \hline
+    le      & signed less than or equal         & Z == 1 ||   N != V\\
+    \hline
+\end{tabular}
+}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Disassembly Table}
+
+\begin{lstlisting}[language=gnu-asm]
+[ 0000 / 0x0 ]
+0000 0000 00mm mddd     @movs rd, rm@           // rd = rm (alias for `lsls rd, rm, #0`)
+0000 0iii iimm mddd     @lsls rd, rm, #imm5@    // rd = rm << imm5
+0000 1iii iimm mddd     @lsrs rd, rm, #imm5@    // rd = rm >> imm5
+
+[ 0001 / 0x1 ]
+0001 0iii iimm mddd     @asrs rd, rm, #imm5@    // rd = rm << imm5 (keep sign)
+0001 100m mmnn nddd     @adds rd, rn, rm@       // rd = rn + rm
+0001 101m mmnn nddd     @subs rd, rn, rm@       // rd = rn - rm
+0001 110i iinn nddd     @adds rd, rn, #imm5@    // rd = rn + imm5
+0001 111i iinn nddd     @subs rd, rn, #imm5@    // rd = rn - imm5
+
+[ 0010 / 0x2 ]
+0010 0ddd iiii iiii     @movs rd, #imm8@        // rd = #imm8
+0010 1nnn iiii iiii     @cmp  rn, #imm8@        // flags = rn - imm8
+
+[ 0011 / 0x3 ]
+0011 0ddd iiii iiii     @adds rd, #imm8@        // rd = rd + imm8
+0011 1ddd iiii iiii     @subs rd, #imm8@        // rd = rd - imm8
+
+[ 0100 / 0x4 ]
+0100 0000 00mm mddd     @ands rd, rm@           // rd = rd & rm
+0100 0000 01mm mddd     @eors rd, rm@           // rd = rd ^ rm
+0100 0000 10mm mddd     @lsls rd, rm@           // rd = rd << rm
+0100 0000 11mm mddd     @lsrs rd, rm@           // rd = rd >> rm
+0100 0001 00mm mddd     @asrs rd, rm@           // rd = rd >> rm (keep sign)
+0100 0001 01mm mddd     @adcs rd, rm@           // rd = rd + rm + carry
+0100 0001 10mm mddd     @sbcs rd, rm@           // rd = rd - rm - (-carry)
+0100 0001 11mm mddd     @rors rd, rm@           // rd = rd << (32 - rm) | rd >> rm
+0100 0010 00mm mddd     @tst  rd, rm@           // flags = rd & rm
+0100 0010 01mm mddd     @rsbs rd, rm, #0@       // rd = 0 - rm (`neg` is an alias to `rsb`)
+0100 0010 10mm mnnn     @cmp  rn, rm@           // flags = rn - rm
+0100 0010 11mm mnnn     @cmn  rn, rm@           // flags = rn + rm
+0100 0011 00mm mddd     @orrs rd, rm@           // rd = rd | rm
+0100 0011 01mm mddd     @muls rd, rm, rd@       // rd = rd * rm
+0100 0011 10mm mddd     @bics rd, rm@           // rd = rd & ~rm (bit clear)
+0100 0011 11mm mddd     @mvns rd, rm@           // rd = ~rm
+0100 0100 dmmm mddd     @add  rd, rm@           // rd = rd + rm
+0100 0101 nmmm mnnn     @cmp  rn, rm@           // flags = rn - rm
+0100 0110 dmmm mddd     @mov  rd, rm@           // rd = rm
+0100 0111 0mmm m...     @bx   rm@               // pc = rm
+0100 0111 1mmm m...     @blx  rm@               // lr = pc | 1u, pc = rm
+0100 1ttt iiii iiii     @ldr  rt, [pc, #imm11]@ // rt = *((uint32_t*)(pc % 4 + (imm11 << 2))
+                        @ldr  rt, =label@       // label/literal is stored in the literal
+                        @ldr  rt, =literal@     // pool and loaded via an offset from the PC
+
+[ 0101 / 0x5 ]
+0101 000m mmnn nttt     @str   rt, [rn, rm]@    // *((uint32_t*)(rn + rm)) = rt
+0101 001m mmnn nttt     @strh  rt, [rn, rm]@    // *((uint16_t*)(rn + rm)) = rt
+0101 010m mmnn nttt     @strb  rt, [rn, rm]@    // *((uint8_t*)(rn + rm)) = rt
+0101 011m mmnn nttt     @ldrsb rt, [rn, rm]@    // rt = *((int8_t*)(rn + rm))
+0101 100m mmnn nttt     @ldr   rt, [rn, rm]@    // rt = *((uint32_t*)(rn + rm))
+0101 101m mmnn nttt     @ldrh  rt, [rn, rm]@    // rt = *((uint16_t*)(rn + rm))
+0101 110m mmnn nttt     @ldrb  rt, [rn, rm]@    // rt = *((uint8_t*)(rn + rm))
+0101 111m mmnn nttt     @ldrsh rt, [rn, rm]@    // rt = *((int16_t*)(rn + rm))
+
+[ 0110 / 0x6 ]
+0110 0iii iinn nttt     @str rt, [rn, #imm5]@   // *((uint32_t*)(rn + (imm5 << 2))) = rt
+0110 1iii iinn nttt     @ldr rt, [rn, #imm5]@   // rt = *((uint32_t*)(rn + (imm5 << 2)))
+
+[ 0111 / 0x7 ]
+0111 0iii iinn nttt     @strb rt, [rn, #imm5]@  // *((uint8_t*)(rn + imm5)) = rt
+0111 1iii iinn nttt     @ldrb rt, [rn, #imm5]@  // rt = *((uint8_t*)(rn + imm5))
+
+[ 1000 / 0x8 ]
+1000 0iii iinn nttt     @strh rt, [rn, #imm5]@  // *((uint16_t*)(rn + (imm5 << 1))) = rt
+1000 1iii iinn nttt     @ldrh rt, [rn, #imm5]@  // rt = *((uint16_t*)(rn + (imm5 << 1)))
+
+[ 1001 / 0x9 ]
+1001 0ttt iiii iiii     @str rt, [sp, #imm8]@   // *((uint32_t*)(sp + (imm8 << 2))) = rt
+1001 1ttt iiii iiii     @ldr rt, [sp, #imm8]@   // rt = *((uint32_t*)(sp + (imm8 << 2)))
+
+[ 1010 / 0xA ]
+1010 0ddd iiii iiii     @adr rd, label@         // rd = (pc % 4) + (imm8 << 2)
+1010 1ddd iiii iiii     @add rd, sp, #imm8@     // rd = sp + (imm8 << 2)
+
+[ 1011 / 0xB ]
+1011 0000 0iii iiii     @add sp, sp, #imm7@     // sp = sp + (imm7 << 2)
+1011 0000 1iii iiii     @sub sp, sp, #imm7@     // sp = sp - (imm7 << 2)
+$1011 00i1 iiii innn     cbz rn, label         // `armv7-m` and later only!$
+1011 0010 00mm mddd     @sxth rd, rm@           // rd = extend_sign((int16_t)rm)
+1011 0010 01mm mddd     @sxtb rd, rm@           // rd = extend_sign((int8_t)rm)
+1011 0010 10mm mddd     @uxth rd, rm@           // rd = (uint16_t)rm
+1011 0010 11mm mddd     @uxtb rd, rm@           // rd = (uint8_t)rm
+1011 010l rrrr rrrr     @push {lr, r0..r7}@     // push selected registers to the stack (l = lr)
+$1011 0110 0100 ....     -                     // unpredictable$
+$1011 0110 0101 0...     setend le             // armv7-a/r only!$
+$1011 0110 0101 1...     setend be             // armv7-a/r only!$
+1011 0110 0110 0aif     @cpsie <i><f>@          // enable processor state i=irq, f=fiq
+1011 0110 0111 0aif     @cpsid <i><f>@          // disable processor state i=irq, f=fiq
+$1011 0110 011x 1...     -                     // unpredictable$
+$1011 10i1 iiii innn     cbnz rn, label        // `armv7-m` and later only!$
+1011 1010 00mm mddd     @rev rd, rm@            // rd[31:0] = rm[7:0, 15:8, 23:16, 31:24]
+1011 1010 01mm mddd     @rev16 rd, rm@          // rd[31:0] = rm[23:16, 31:24, 7:0, 15:8]
+$1011 1010 10.. ....     -                     // undefined$
+1011 1010 11mm mddd     @revsh rd, rm@          // rd[31:0] = extend_sign((int32_t)rm[7:0, 15:8])
+1011 110p rrrr rrrr     @pop {pc, r0..r7}@      // pop selected registers from the stack (p = pc)
+1011 1110 iiii iiii     @bkpt #imm8@            // breakpoint, arg ignored by hw
+1011 1111 0000 0000     @nop@                   // do nothing
+1011 1111 0001 0000     @yield@                 // signal to hw to suspend/resume threads
+1011 1111 0010 0000     @wfe@                   // wait for event
+1011 1111 0011 0000     @wfi@                   // wait for interrupt
+1011 1111 0100 0000     @sev@                   // signal event to multi-processor system
+$1011 1111 cccc mmmm     itsel cond            // `armv7-m` and later only!$
+
+[ 1100 / 0xC ]
+1100 0nnn rrrr rrrr     @stmia rn<!> {reg0-7}@  // store selected registers at address in `rn`
+1100 1nnn rrrr rrrr     @ldmia rn<!> {reg0-7}@  // load selected registers from address in `rn`
+
+[ 1101 / 0xD ]
+1101 cccc iiii iiii     @b<cond> label@         // if (cond) goto label
+$1101 1110 .... ....     -                     // undefined$
+
+[ 1110 / 0xE ]
+1110 0iii iiii iiii     @b label@               // goto label
+$1110 1... .... ....     -                     // `armv7-m` and later only!$
+
+
+[ 1111 / 0xF ]
+1111 0sii iiii iiii 11j1 kiii iiii iiii     @bl label@      // lr = pc | 1u, goto label
+1111 0011 1110 1111 1000 dddd ssss ssss     @mrs rd, rs@    // rd = rs (rs = special register)
+1111 0011 1000 mmmm 1000 1000 ssss ssss     @msr rs, rm@    // rs = rm (rs = special register)
+1111 0011 1011 1111 1000 1111 0100 1111     @dsb@           // data synchronisation barrier
+1111 0011 1011 1111 1000 1111 0101 1111     @dmb@           // data memory barrier
+1111 0011 1011 1111 1000 1111 0110 1111     @isb@           // instruction synchronisation barrier
+\end{lstlisting}
+
+\end{document}

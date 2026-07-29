@@ -6,8 +6,8 @@
   passing](#subroutines-and-parameter-passing)
   - [Introduction](#introduction)
   - [Learning Objectives](#learning-objectives)
-  - [**Task 1** Search maximum](#task-1-search-maximum)
-  - [**Task 2** I/O functions in
+  - [**Task 1:** Search maximum](#task-1-search-maximum)
+  - [**Task 2:** I/O functions in
     assembly](#task-2-io-functions-in-assembly)
   - [Grading](#grading) <!--toc:end-->
 
@@ -21,8 +21,10 @@ and examine parameter passing in assembly.
 - You can implement a subroutine, call it and pass parameters to it.
 - You know how to use `push` and `pop`.
 - You practice using arrays in assembly.
+- You can implement subroutines in assembly to be called in C programs,
+  following the ARM procedure call standard.
 
-## **Task 1** Search maximum
+## **Task 1:** Search maximum
 
 Write a subroutine to determine the highest value in a table of 32 bit
 signed integers.
@@ -43,7 +45,7 @@ Test your implementation by building and flashing the program. On
 pressing the button T0, the test is started and the result printed to
 the LCD.
 
-## **Task 2** I/O functions in assembly
+## **Task 2:** I/O functions in assembly
 
 Implement functions to read and write one word (32 bits) in assembly.
 Call the functions in the main loop to read the DIP switches and write

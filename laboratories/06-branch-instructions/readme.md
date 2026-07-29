@@ -32,11 +32,12 @@ The numbers will be displayed in various ways.
 ## **Task 1** BCD to binary
 
 Use the provided project `bcd`. Read a BCD input from the DIP-switches.
-The switches `S3..S0` shall contain the ones and the switches `S11..S8`
-shall contain the tens. The two digits shall be combined, so that the
-BCD value can be displayed on `LED7..LED0` and the corresponding binary
-value on LED15 to LED8. Additionally the BCD value shall be displayed on
-the 7-segment display `DS1..DS0` and the HEX value on `DS3..DS2`.
+The switches `S[3..0]` shall contain the ones and the switches
+`S[11..8]` shall contain the tens. The two digits shall be combined, so
+that the BCD value can be displayed on `LED[7..0]` and the corresponding
+binary value on `LED[15..8]`. Additionally the BCD value shall be
+displayed on the 7-segment display `DS[1..0]` and the HEX value on
+`DS[3..2]`.
 
 For this lab we assume the user only enters valid BCD codes. The program
 does not have to validate the input.
@@ -66,9 +67,9 @@ implementation and set the LCD background to **blue**.
 Expand your program, so that the total number of set bits (`1`) in the
 **binary** value is represented as a bar on the LEDs.
 
-- *First* just display a static bar of active LEDs on LED31..LED16. The
+- *First* just display a static bar of active LEDs on `LED[31..16]`. The
   width of the bar from the right shall correspond to the number of LEDs
-  that are turned on for LED15..LED8. I.e. the width of the LED bar
+  that are turned on for `LED[15..8]`. I.e. the width of the LED bar
   corresponds to the number of ones in the binary value.
 
 - *Second* make this LED bar rotate (see Figure below). The direction of
@@ -87,7 +88,7 @@ alt="Chasing light implementation" />
 > - LED31..LED16 are aligned to a half word address. Use `strh` for
 >   updating to avoid overwriting any other registers.
 > - The processors instruction for rotating only operate on 32 bit
->   registers. To circumvent this problem, have to copies of the light
+>   registers. To circumvent this problem, have two copies of the light
 >   bar in the register to display. This works, because the instruction
 >   operates on an integer multiple of the length of our display.
 

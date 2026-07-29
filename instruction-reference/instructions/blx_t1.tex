@@ -1,0 +1,18 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{blx rm}\hfill\textit{T1}\\
+    rm $\in$ \extendedregisters\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {010001}%
+        \bitgroup{asm-grey}     {11}%
+        \bitgroup{asm-grey}     {1}%
+        \bitgroup{asm-orange}   {mmmm}%
+        \bitgroup{asm-grey}     {000}%
+    }
+    {}\\
+    lr = pc | 1u;\\
+    pc = rm \& \textasciitilde 1u;
+\end{instructionblock}
+\end{document}

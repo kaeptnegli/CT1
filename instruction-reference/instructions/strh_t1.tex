@@ -1,0 +1,17 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{strh rt, [ rn, rm ]}\hfill\textit{T1}\\
+    rt, rn, rm $\in$ \baseregisters\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {0101}%
+        \bitgroup{asm-grey}     {001}%
+        \bitgroup{asm-orange}   {mmm}%
+        \bitgroup{asm-pink}     {nnn}%
+        \bitgroup{asm-green}    {ttt}%
+    }
+    {}\\
+    {*}((uint16\_t)(rn + rm)) = rt;
+\end{instructionblock}
+\end{document}

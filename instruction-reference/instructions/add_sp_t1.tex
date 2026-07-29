@@ -1,0 +1,16 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{add rd, sp}\hfill\textit{T1}\\
+    rd $\in$ \extendedregisters\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {01000100}%
+        \bitgroup{asm-green}    {d}%
+        \bitgroup{asm-grey}     {1101}%
+        \bitgroup{asm-green}    {ddd}%
+    }
+    {}\\
+    rd = rd + sp;
+\end{instructionblock}
+\end{document}

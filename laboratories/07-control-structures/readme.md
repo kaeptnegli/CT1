@@ -23,7 +23,7 @@ operation can be selected through the rotary switch.
 
 ## Task 1
 
-Implement a program, which reads 8-bit values from the DIP-switches and
+Implement a program, that reads 8-bit values from the DIP-switches and
 performs different operations on them. The result shall be displayed on
 the LEDs. Use the given project frame.
 
@@ -31,21 +31,20 @@ the LEDs. Use the given project frame.
 >   where to enter your code.
 > - Implement the switch-case statement based on the lecture slides.
 
-The program shall meet the following requirements (See Table 1, Figure
-1):
+The program shall meet the following requirements:
 
-- The first operand (op1) shall be entered through the DIP-switches S15
-  to S8.
-- The second operand (op2) shall be entered through the DIP-switches S7
-  to S0.
+- The first operand (op1) shall be entered through the DIP-switches
+  `S[15..8]`.
+- The second operand (op2) shall be entered through the DIP-switches
+  `S[7..0]`.
 - The 8 bit operands shall be zero-extended to 32 bit.
 - The operation shall be selected through the rotary switch, according
-  to Table 1.
+  to the table below.
 - The position of the rotary switch shall be displayed on the 7-segment
-  display. The operands 1 and 2 shall be displayed on LED15 to LED0
+  display. The operands 1 and 2 shall be displayed on `LED[15..0]`
   (above the corresponding DIP-switches).
-- The 16 bit result shall be displayed on LED31 to LED16.
-- A logical “1” shall mean that the corresponding LED is on.
+- The 16 bit result shall be displayed on `LED[31..16]`.
+- A logical ‘1’ shall mean that the corresponding LED is on.
 - The program shall use a jump table.
 
 | **Hex-Switch** | **Operation**         |
@@ -54,13 +53,13 @@ The program shall meet the following requirements (See Table 1, Figure
 |           0x01 | op1 + op2             |
 |           0x02 | op1 - op2             |
 |           0x03 | op1 \* op2 (unsigned) |
-|           0x04 | op1 & op2 \> AND      |
-|           0x05 | op1 \| op2 \> OR      |
-|           0x06 | op1 ^ op2 \> XOR      |
-|           0x07 | !op1 \> NOT           |
-|           0x08 | !(op1 & op2) \> NAND  |
-|           0x09 | !(op1                 |
-|           0x0A | !(op1 ^ op2) \> XNOR  |
+|           0x04 | op1 & op2 (AND)       |
+|           0x05 | op1 \| op2 (OR)       |
+|           0x06 | op1 ^ op2 (XOR)       |
+|           0x07 | !op1 (NOT)            |
+|           0x08 | !(op1 & op2) (NAND)   |
+|           0x09 | !(op1 \| op2) (NOR)   |
+|           0x0A | !(op1 ^ op2) (XNOR)   |
 |           0x0B | all 16 LEDs on        |
 |           0x0C | all 16 LEDs on        |
 |           0x0D | all 16 LEDs on        |

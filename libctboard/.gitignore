@@ -1,0 +1,8 @@
+.git/
+bin
+obj
+lib
+
+*.a
+*.tar.*
+*.zip

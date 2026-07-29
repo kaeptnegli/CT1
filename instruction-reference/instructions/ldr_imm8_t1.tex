@@ -1,0 +1,16 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{ldr rt, [ \#imm8 ]}\hfill\textit{T1}\\
+    rt $\in$ \baseplus\\
+    imm8 $\in$ \immEight\ {<}{<} 2\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {01001}%
+        \bitgroup{asm-green}    {ttt}%
+        \bitgroup{asm-purple}   {iiiiiiii}%
+    }
+    {}\\
+    rd = *((uint32\_t)(pc + imm8 {<}{<} 2));
+\end{instructionblock}
+\end{document}

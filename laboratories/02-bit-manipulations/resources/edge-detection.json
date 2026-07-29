@@ -1,0 +1,10 @@
+{signal: [
+  {name: 'Button T0', wave: '0|...|.'},
+  {name: 'Button T1', wave: '0|.1.|.'},
+  {name: 'Button T2', wave: '0|...|.'},
+  {name: 'Button T3', wave: '0|...|.'},
+],
+  foot: {
+  text: ['tspan', {dx:'1', dy:-10}, 'A       B'],
+  }
+}

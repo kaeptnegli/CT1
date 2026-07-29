@@ -34,6 +34,7 @@ gfm: $(GFM_FILES)
         --pdf-engine pdflatex \
         --listings \
         --template $(COMMON_DIR)/template.tex \
+        --lua-filter=$(COMMON_DIR)/horizontal-rule.lua \
         -f markdown \
         -t pdf \
         $(VERBOSITY) \

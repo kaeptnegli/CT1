@@ -1,0 +1,18 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{ldr rt, [ rn, <\#imm5> ]}\hfill\textit{T1}\\
+    rt $\in$ \baseplus\\
+    rn $\in$ \baseregisters\\
+    imm5 $\in$ \immFive\ {<}{<} 2\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {01101}%
+        \bitgroup{asm-purple}   {iiiii}%
+        \bitgroup{asm-pink}     {nnn}%
+        \bitgroup{asm-green}    {ttt}%
+    }
+    {}\\
+    rt = *((uint32\_t)(rn + imm5 {<}{<} 2));
+\end{instructionblock}
+\end{document}

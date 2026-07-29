@@ -1,0 +1,17 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{strh rt, [ rn, <\#imm5> ]}\hfill\textit{T1}\\
+    rt, rn $\in$ \baseregisters\\
+    imm5 $\in$ \immFive\ {<}{<} 1\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {1000}%
+        \bitgroup{asm-grey}     {0}%
+        \bitgroup{asm-purple}   {iiiii}%
+        \bitgroup{asm-pink}     {nnn}%
+        \bitgroup{asm-green}    {ttt}%
+    }\\
+    {*}((uint16\_t)(rn + imm5 {<}{<} 1)) = rt;
+\end{instructionblock}
+\end{document}

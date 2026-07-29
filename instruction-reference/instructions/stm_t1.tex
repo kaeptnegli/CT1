@@ -1,0 +1,20 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{stm rn<!>, \{ registers \}}\hfill\textit{T1}\\
+    rd, $\in$ \baseregisters\\
+    registers $\subseteq$ \baseregisters\\
+    <!> also load rn\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {1100}%
+        \bitgroup{asm-grey}     {0}%
+        \bitgroup{asm-pink}     {nnn}%
+        \bitgroup{asm-red}      {rrrrrrrr}%
+    }
+    {}\\
+    for (k = 0; k < \#regs; k++)\{\\
+    *((uint32\_t)(rn + k)) = regs[k];\\
+    \}
+\end{instructionblock}
+\end{document}

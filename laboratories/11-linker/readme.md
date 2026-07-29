@@ -25,7 +25,7 @@
 In this lab, you will learn how to fix errors that occur when using
 external libraries and how to configure the debugger so that it can step
 into library functions. Additionally, you will learn how to interpret
-the output files created by the assembler/compiler and linker
+the output files created by the assembler/compiler and linker.
 
 The project consists of a library along with the corresponding header
 files. You must specify the correct locations of the header files in the

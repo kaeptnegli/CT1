@@ -1,0 +1,23 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{1.4\imagewidth}%
+    \textbf{bl label}\hfill\textit{T1}\\
+    label (imm23) $\in$ \{ -8'388'608..8'388'607 \} {<}{<} 1\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {11110}%
+        \bitgroup{asm-red}      {S}%
+        \bitgroup{asm-purple}   {iiiiiiiiii}%
+        \bitgroup{asm-grey}     {11}%
+        \bitgroup{asm-red}      {J}%
+        \bitgroup{asm-grey}     {1}%
+        \bitgroup{asm-red}      {K}%
+        \bitgroup{asm-purple}   {iiiiiiiiiii}%
+    }
+    {}\\
+    \textit{I1 = not(J xor S) I2 = not(K xor S)}\\
+    \textit{imm23 = s:i1:i2:imm10:imm11:0}\\
+    lr = pc | 1u;\\
+    pc = pc + imm23 {<}{<} 1;
+\end{instructionblock}
+\end{document}

@@ -1,0 +1,17 @@
+\input{preamble-instruction.tex}
+
+\begin{document}
+\begin{instructionblock}{\imagewidth}%
+    \textbf{cmp rn, rm}\hfill\textit{T2}\\
+    rn, rm $\in$ \extendedregisters\\
+    \binaryoperation{%
+        \bitgroup{asm-blue}     {010001}%
+        \bitgroup{asm-grey}     {01}%
+        \bitgroup{asm-green}    {n}%
+        \bitgroup{asm-orange}   {mmmm}%
+        \bitgroup{asm-green}    {nnn}%
+    }
+    {N Z C V}\\
+    update\_flags(rn - rm);
+\end{instructionblock}
+\end{document}

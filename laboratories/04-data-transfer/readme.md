@@ -35,7 +35,7 @@ Using assembly language you are able
 - to access tables with byte elements as well as tables with halfword
   elements
 
-## **Task 1** Input and output table values
+## **Task 1:** Input and output table values
 
 Write an assembly program: Upon every press of button T0 the program
 shall read a 4-bit input index (S11 to S8) and an 8-bit input value (S7
@@ -46,7 +46,6 @@ In addition, the input index shall be displayed on LED11 to LED8.
 
 <figure>
 <img src="./resources/table-explanation-picture.png"
-title="writing and reading values to/from table in memory"
 alt="writing and reading value to/from the table" />
 <figcaption aria-hidden="true">writing and reading value to/from the
 table</figcaption>
@@ -129,7 +128,7 @@ on LED23 to LED16.
 Verify the correct function of your program by filling the table with
 defined values reading afterwards.
 
-## **Task 2** Variant with halfword table
+## **Task 2:** Variant with halfword table
 
 Adjust your program so that it uses a table of halfwords (16 bits)
 instead of bytes. Additionally to the input value (stored in the less
@@ -140,7 +139,7 @@ Also display the output index (DS3..DS2) and output value (DS1..DS0) on
 the 7-segment display.
 
 > Since a halfword contains two bytes, you have to multiply the indices
-> by two. You can use the ‘Logic Shift Left Shift’ (`LSLS`) instruction
+> by two. You can use the `LSLS` (‘Logic Shift Left Status’) instruction
 > to achieve this.
 
 > Visit the [CT-Wiki](https://ennis.zhaw.ch) to read up on the 7-segment

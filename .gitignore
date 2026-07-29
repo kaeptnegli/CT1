@@ -19,5 +19,6 @@ build/
 *.lnp
 compile_flags.txt
 
-# ignore students repository
+# ignore release repositories
+solution-repository
 student-repository
