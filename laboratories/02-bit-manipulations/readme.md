@@ -32,7 +32,7 @@ you will detect events on the four buttons `T[3..0]`.
 
 ## **Task 1:** Control individual LEDs
 
-Expand the given program so that `LED7..6` are always on (bright) and
+Expand the given program so that `LED[7..6]` are always on (bright) and
 `LED[5..4]` are always off (dark). As a result `LED[3..0]` will be
 controlled by the settings of DIP switches `SW[3..0]` whereas the state
 of the four leftmost DIP switches will be ignored.

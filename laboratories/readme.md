@@ -1,10 +1,5 @@
 # CT1 with GNU assembly syntax
 
-<!--
-NOTES:
-linux -> add user to group `plugdev`/`uucp`
--->
-
 > Do **not** fork the repository, see `../readme.(md|pdf)` for
 > instructions on how to setup a private remote repository to work with.
 
@@ -43,7 +38,8 @@ Code](#installing-visual-studio-code) for a guide on how to setup visual
 studio code as IDE for the labs.
 
 > Authors choice is Makefiles and GDB, as IDEs are big in scale and
-> therefore harder to debug, automate and are prone to vulnerabilities.
+> therefore harder to debug and automate and are prone to
+> vulnerabilities.
 
 ## Linux
 
@@ -54,8 +50,9 @@ uses a distribution, that does not come with these tools preinstalled
 and does not provide packages, the path of pain was chosen
 deliberately..
 
-`openocd` is relatively popular and thus be packaged on many linux
-distributions, if not you follow the instructions on their
+`openocd` is relatively popular and thus packaged on many linux
+distributions. If your system does not provide a binary package, you can
+follow the instructions on its
 [website](https://openocd.org/pages/getting-openocd.html) or if the
 website is not reachable try the [official
 repository](https://sourceforge.net/p/openocd/code/ci/master/tree/).
@@ -86,15 +83,13 @@ download
 page](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads),
 ensure to download the one with `arm-none-eabi` in the name. The path to
 the downloaded binaries needs to be added to the PATH variable, in order
-for bash to find the executables. This can be achieve with the command
+for bash to find the executables. This can be achieved with the command
 `export PATH=$PATH:<path/to/toolchain/bin>`. Add this command to
 `~/.bashrc` to make it permanent.
 
 > ***Important:*** The `arm-none-eabi toolchain` comprises `gcc`, `gdb`,
 > `binutils` and `newlib`, depending on the distribution, these might be
 > separate packages and you need all of them.
-
-<!-- TODO: add instructions to setup paths for toolchains in vscode on linux -->
 
 ## Windows
 
@@ -106,17 +101,18 @@ When using Keil, follow the instructions on the [Wiki
 > Keil path, the installation instructions contain a section on
 > installing the drivers too.
 >
-> You can download said driver on [STMs
-> website](https://www.st.com/en/development-tools/stsw-link009.html) or
-> for convenience from the
-> [Wiki](https://ennis.zhaw.ch/wiki/doku.php?id=software:start:getting_started),
-> so you do not have to give your email to STM.
+> If you choose the Makefile/VSCode route, you need just the driver,
+> which you can download on
+> [Wiki](https://ennis.zhaw.ch/wiki/doku.php?id=software:start:getting_started)
+> for convenience, or on [STMs
+> website](https://www.st.com/en/development-tools/stsw-link009.html) if
+> the link is still valid.
 
 ### Installing MSYS2
 
 MSYS2 (Minimal System 2) is a software distribution and a development
 platform for Microsoft Windows, based on Mingw-w64 and Cygwin, that
-helps to deploy code from the Unix world on Windows.
+allows to deploy code from the Unix world on Windows.
 
 Download the installer from the [MSYS2 website](https://www.msys2.org/).
 
@@ -135,9 +131,9 @@ unchecked.
 
 <figure>
 <img src="./resources/msys2/msys-postinstallation.png"
-alt="Installation finished of MSYS2" />
-<figcaption aria-hidden="true">Installation finished of
-MSYS2</figcaption>
+alt="Installation of MSYS2 finished" />
+<figcaption aria-hidden="true">Installation of MSYS2
+finished</figcaption>
 </figure>
 
 ### Installing Visual Studio Code
@@ -151,15 +147,15 @@ MSYS2</figcaption>
 > been more supply chain attacks through VSCode extensions in just the
 > past few month than i want to count.
 
-Install [Visual Studio Code](https://code.visualstudio.com/) if it is
-not already installed.
+Install [Visual Studio Code](https://code.visualstudio.com/) (if not
+installed already).
 
-After installing Visual Studio Code setup the provided profile
+After installing Visual Studio Code set up the provided profile
 `common/ct.code-profile`. Start Visual Studio Code, click the settings
 button in the bottom-left corner, and select *Profiles*.
 
 <figure>
-<img src="./resources/visual-studio-code/vsc-profile.png"
+<img src="./resources/vs-code/vsc-profile.png"
 alt="VSCode profile settings" />
 <figcaption aria-hidden="true">VSCode profile settings</figcaption>
 </figure>
@@ -168,7 +164,7 @@ After the Profiles window has opened, click the arrow next to the *New
 Profile* button and select *Import Profile…*.
 
 <figure>
-<img src="./resources/visual-studio-code/vsc-profile-import.png"
+<img src="./resources/vs-code/vsc-profile-import.png"
 alt="VSCode profile import" />
 <figcaption aria-hidden="true">VSCode profile import</figcaption>
 </figure>
@@ -177,7 +173,7 @@ Navigate to the local repository and select
 `laboratories/common/ct.code-profile`.
 
 <figure>
-<img src="./resources/visual-studio-code/vsc-profile-path.png"
+<img src="./resources/vs-code/vsc-profile-path.png"
 alt="VSCode profile path" />
 <figcaption aria-hidden="true">VSCode profile path</figcaption>
 </figure>
@@ -187,7 +183,7 @@ from the CT profile are selected for import. The other options can be
 chosen as needed.
 
 <figure>
-<img src="./resources/visual-studio-code/vsc-profile-create.png"
+<img src="./resources/vs-code/vsc-profile-create.png"
 alt="VSCode profile create" />
 <figcaption aria-hidden="true">VSCode profile create</figcaption>
 </figure>
@@ -289,7 +285,7 @@ A common alternative is to use an SSH key with no password. This is not
 recommended, but many developers do it anyways.
 
 <figure>
-<img src="./resources/git/git-windows-credentials-manager.png"
+<img src="./resources/git/git-credentials.png"
 alt="git credentials option" />
 <figcaption aria-hidden="true">git credentials option</figcaption>
 </figure>
@@ -301,11 +297,8 @@ At this point the local repository should be setup, so `git` is working.
 Since you probably used `git` in `bash`, it is probably installed
 correctly too.
 
-If `./lib/` was populated, one can open laboratory `01-target-system`
-and try building it. If it builds without errors, `make` and the
-compiler work as intended.
-
-To test `openocd`, connect a CT board and try flashing lab 1.
+To test the toolchain and `openocd`, connect a CT board and build/flash
+laboratory 2.
 
 # Workflow with Makefile
 
@@ -437,7 +430,8 @@ desired task.
 > the task for the lab currently being worked on.
 
 > *Note:* There is a Vim extension for Visual Studio Code, which can
-> make editing more comfortable for Vim users.
+> make editing more comfortable for Vim users taking advantage of
+> VSCodes debugger integration.
 
 ## Debugging with Visual Studio Code
 
@@ -446,7 +440,7 @@ icon or by pressing `Ctrl+Shift+D`. Select the desired target next to
 the green play button, then press the play button or `F5`.
 
 <figure>
-<img src="./resources/visual-studio-code/vsc-debug-window.png"
+<img src="./resources/vs-code/vsc-debug-window.png"
 alt="Debug Window" />
 <figcaption aria-hidden="true">Debug Window</figcaption>
 </figure>

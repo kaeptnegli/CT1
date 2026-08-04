@@ -31,11 +31,10 @@ the memory and register content. You will trace the influence of several
 data transfer commands and their addressing modes with the remote
 debugger.
 
-<!-- TODO: fix this path -->
-
-> The file `<ct-students-path>/laboratories/asm-cheatsheet.pdf` lists
-> and explains the most important instructions (of the thumb instruction
-> set) and is rather handy for all future laboratories.
+> The file
+> `<ct-students-path>/instruction-reference/instruction-reference.pdf`
+> lists and explains the most important instructions (of the thumb
+> instruction set) and is rather handy for all future laboratories.
 >
 > It is also recommended to bring this document to all exams.
 

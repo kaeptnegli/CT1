@@ -5,9 +5,9 @@
 - [ALU and Branch Instructions](#alu-and-branch-instructions)
   - [Introduction](#introduction)
   - [Learning Objectives](#learning-objectives)
-  - [**Task 1** BCD to binary](#task-1-bcd-to-binary)
-  - [**Task 2** Chasing light](#task-2-chasing-light)
-  - [**Task 3 (optional)** Validate BCD
+  - [**Task 1:** BCD to binary](#task-1-bcd-to-binary)
+  - [**Task 2:** Chasing light](#task-2-chasing-light)
+  - [**Task 3 (optional):** Validate BCD
     input](#task-3-optional-validate-bcd-input)
   - [Grading](#grading) <!--toc:end-->
 
@@ -24,12 +24,12 @@ The numbers will be displayed in various ways.
 ## Learning Objectives
 
 - You can apply logical, arithmetic and shift instructions.
-- You can implement a multiplication with the `MULS` instruction as well
+- You can implement a multiplication with the `muls` instruction as well
   as with a combination of `shift` and `add` instructions.
 - You can compare values with each other and apply corresponding branch
   instructions.
 
-## **Task 1** BCD to binary
+## **Task 1:** BCD to binary
 
 Use the provided project `bcd`. Read a BCD input from the DIP-switches.
 The switches `S[3..0]` shall contain the ones and the switches
@@ -62,7 +62,7 @@ implementation and set the LCD background to **blue**.
 > values. Check the [CT Board Wiki](https://ennis.zhaw.ch) for the
 > binary interface of the 7-segment displays.
 
-## **Task 2** Chasing light
+## **Task 2:** Chasing light
 
 Expand your program, so that the total number of set bits (`1`) in the
 **binary** value is represented as a bar on the LEDs.
@@ -92,7 +92,7 @@ alt="Chasing light implementation" />
 >   bar in the register to display. This works, because the instruction
 >   operates on an integer multiple of the length of our display.
 
-## **Task 3 (optional)** Validate BCD input
+## **Task 3 (optional):** Validate BCD input
 
 Verify the validity of the value entered on the DIP switches. If the
 value is invalid all LEDs shall be turned off.

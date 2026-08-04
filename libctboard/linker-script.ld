@@ -91,6 +91,7 @@ SECTIONS
     . = ALIGN(4);
     *(.rodata)         /* .rodata sections (constants, strings, etc.) */
     *(.rodata*)        /* .rodata* sections (constants, strings, etc.) */
+    *(.my_const)
     . = ALIGN(4);
   } >FLASH
 
@@ -152,7 +153,6 @@ SECTIONS
     *(.RamFunc)        /* .RamFunc sections */
     *(.RamFunc*)       /* .RamFunc* sections */
     *(.my_var)
-    *(.my_const)
 
     . = ALIGN(4);
     _edata = .;        /* define a global symbol at data end */

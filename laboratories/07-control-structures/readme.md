@@ -5,7 +5,8 @@
 - [Control Structures](#control-structures)
   - [Introduction](#introduction)
   - [Learning Objectives](#learning-objectives)
-  - [Task 1](#task-1)
+  - [**Task:** Switch Case
+    implementation](#task-switch-case-implementation)
   - [Grading](#grading) <!--toc:end-->
 
 ## Introduction
@@ -21,7 +22,7 @@ operation can be selected through the rotary switch.
 - you strengthen your skills in the application of arithmetic and logic
   instructions
 
-## Task 1
+## **Task:** Switch Case implementation
 
 Implement a program, that reads 8-bit values from the DIP-switches and
 performs different operations on them. The result shall be displayed on
