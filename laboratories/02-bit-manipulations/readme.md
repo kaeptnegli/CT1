@@ -49,9 +49,9 @@ switches.
 1)  Expand the program from [Task 1](#task-1-control-individual-leds).
     Read the state of the buttons `T[3..0]` into a variable, that you
     define. Mask the unused upper four bits. Define an 8 bit wide
-    counter variable. Increment this variable each time the button
-    `T[0]` is pressed i.e. whenever bit 0 is high. Output the counter
-    variable on `LED[15..8]` during each loop iteration.
+    counter variable. Increment this variable each time the button `T0`
+    is pressed i.e. whenever bit 0 is high. Output the counter variable
+    on `LED[15..8]` during each loop iteration.
 2)  What do you notice when testing? By which value does the counter
     increase when you press the button? What is the cause?
 3)  Expand the program with another counter variable that counts the
@@ -102,8 +102,8 @@ on `LED[23..16]`.
 
 Change the program from [Task
 3](#task-3-add-functions-for-remaining-buttons), so that only bits
-`[5..2]` are inverted when button `T[2]` is pressed. The other bits
-shall be left untouched.
+`[5..2]` are inverted when button `T2` is pressed. The other bits shall
+be left untouched.
 
 > You can toggle a bit with the XOR operation (`^`). Create a mask with
 > the bits to toggle set (true).

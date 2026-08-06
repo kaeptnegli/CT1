@@ -32,8 +32,8 @@ The numbers will be displayed in various ways.
 ## **Task 1:** BCD to binary
 
 Use the provided project `bcd`. Read a BCD input from the DIP-switches.
-The switches `S[3..0]` shall contain the ones and the switches
-`S[11..8]` shall contain the tens. The two digits shall be combined, so
+The switches `SW[3..0]` shall contain the ones and the switches
+`SW[11..8]` shall contain the tens. The two digits shall be combined, so
 that the BCD value can be displayed on `LED[7..0]` and the corresponding
 binary value on `LED[15..8]`. Additionally the BCD value shall be
 displayed on the 7-segment display `DS[1..0]` and the HEX value on

@@ -90,7 +90,7 @@ table and compares the calculated result against a reference value. If
 all tests pass the 7 segment display will show `PASS`, otherwise it will
 show `FAIL`.
 
-The desired operation can be chosen with the buttons `T0..T2`. The LCD
+The desired operation can be chosen with the buttons `T[0..2]`. The LCD
 displays the operation executed last, the LEDs show which test values
 failed.
 

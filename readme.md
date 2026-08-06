@@ -3,53 +3,84 @@
 This repository contains the lectures, exercises and laboratories for
 computer engineering 1.
 
+**Do not fork this repository.**
+See chapter ["Forking" the repository](#forking-the-repository) for
+instructions on how to get a private copy of the repository.
+
+<!--toc:start-->
+- [CT1 - Computer engineering](#ct1-computer-engineering)
+  - ["Forking" the repository](#forking-the-repository)
+  - [File structure](#file-structure)
+<!--toc:end-->
+
+
+## Terminology
+
+* Path are relative whenever applicable.
+* Values in angle brackets (`<>`) are usually placeholders for
+  setupspecific parameters.
+
 
 ## "Forking" the repository
 
-It is sensible to fork this repository and continue working with
-`git`.
+It is sensible to work with Git and have a private copy of this
+repository.
 
-> However if you fork it on Github, students after you will have
-> trouble finding the right repository searching for `ct`.
-> Also they will have your solutions, though experience shows, they
-> will have access to solutions anyways.
-> (It is usually rather easy to spot.)
->
-> Thus you shall not use Githubs `fork` function.
-> Instead follow the steps below.
+However if you fork it on Github, students after you will have
+trouble finding the right repository searching for `ct`.
+Also they will have your solutions, though experience shows, they
+will have access to solutions anyways.
+(It is usually rather easy to spot.)
 
-**First** clone the CT1 repository locally.
-Read `git-introduction.(md|pdf)` if you do not know how to use Git.
+Thus you shall not use Githubs `fork` function.
+Instead follow the steps below.
 
-**Second** create an empty and **private** repository with your user
-as owner.
+1)  Clone the CT1 repository locally.
+    Read `git-introduction.(md|pdf)` if you do not know how to use
+    Git.
 
-![Creating a new repository](./resources/create-new-repository.png)
+1)  Create an empty and **private** repository with your user
+    as owner.
 
-![Settings for new repository](./resources/repository-settings.png)
+    ![Creating a new repository](./resources/create-new-repository.png)
 
-Make sure to select your **user as owner**.
-Choose a recognisable name for you new repository.
-The description is optional.
+    ![Settings for new repository](./resources/repository-settings.png)
 
-> As mentioned before: Set the visibility to **Private**.
+    Make sure to select your **user as owner**.
+    Choose a recognisable name for you new repository.
+    The description is optional.
 
-**Third** change the URL of your local copy of the CT1 repository.
+    > As mentioned before: Set the visibility to **Private**.
 
-![Newly created empty repository](./resources/empty-repository.png)
+1)  Change the URL of your local copy of the CT1 repository.
 
-Copy the URL in the 'Quick setup' box.
-In your local copy of the CT1 repository set the remote URL to your
-empty repository.
+    ![Newly created empty repository](./resources/empty-repository.png)
 
-```sh
-cd <path/to/ct1/repository>
-git remote set-url origin <url-to-private-repository>
-```
+    Copy the URL in the 'Quick setup' box.
+    In your local copy of the CT1 repository set the remote URL to
+    your empty repository.
 
-**Optionally** if you work on the labs with a fellow student, you can
-open the settings of your private repository and add them as
-collaborator in order to give them access.
+    ```sh
+    cd <path/to/ct1/repository>
+    git remote set-url origin <url-to-private-repository>
+    ```
+
+1)  In order to get updates, set up a second remote for your local
+    copy, called upstream with the URL of the provided repository.
+
+    ```sh
+    # synopsis: git remote add <remote-name> <remote-url>
+    git remote add upstream git@github.zhaw.ch:CT/ct1-students.git
+    ```
+
+    To get updates, you can now use `git pull upstream main`.
+    This will cause conflicts, generally you can choose your own
+    changes on any laboratory you have already solved, and choose the
+    upstream change on all others.
+
+1)  **Optionally** if you work on the labs with a fellow student, you
+    can open the settings of your private repository and add them as
+    collaborator in order to give them access.
 
 
 ## File structure

@@ -99,9 +99,10 @@ following table, i.e. sum, difference and flags.
 Once the tables are completed write the program and compare its output
 against the tables.
 
-  
-  
-  
+\>  
+\>  
+\>  
+\>
 
 <figure>
 <img src="./resources/number-circle.png" alt="number circle" />

@@ -47,10 +47,9 @@ The program shall count the number of times, the user button is pressed.
 
 Before one can use interrupts, they need to be enabled. Look up the
 vectortable to find the interrupt number to enable and the symbol (name)
-of the interrupt handler function. Open the file `../lib/startup.s` and
-have a look at the interrupt vector table. If there is no such file in
-`../lib/`, open the root level `readme.md` and read the section on
-setting up the local repository.
+of the interrupt handler function. Open the file
+`../../libctboard/device/source/startup.s` and have a look at the
+interrupt vector table.
 
 > ***Sidenote:*** With ARM architectures the interrupt controller
 > resides in the processor (rather than being a peripheral around it),
@@ -62,16 +61,18 @@ source for the interrupt line `EXTI0`.
 What is the symbol (in this case function name) of the associated
 handler?
 
-  
-  
+\>  
+\>  
+\>
 
 What is the corresponding interrupt request number (IRQn)? You can
 either count entries in the vector table, or look up the table in the
 microcontrollers (`STM32F429ZI`) reference manual online, which has a
 column with the irq numbers.
 
-  
-  
+\>  
+\>  
+\>
 
 ### Enable the interrupt line for EXTI0
 
@@ -96,8 +97,8 @@ Set a breakpoint at the start of your interrupt handler and test, that
 it is called when activating the user button.
 
 Then extend your handler function by a counter, that is increased on
-every call. Define a variable in the given section `my_var` to store the
-counter value. Keep the call to `clear_IRQ_EXTI0` at the end of your
+every call. Define a variable in the given section `.my_var` to store
+the counter value. Keep the call to `clear_IRQ_EXTI0` at the end of your
 handler.
 
 ### Display counter
@@ -120,18 +121,20 @@ the counter.
 
 ### Vector table lookup for TIM2
 
-Open the file `startup.s` again and extract the symbol and number for
+Open the file *startup.s* again and extract the symbol and number for
 the handler for interrupt TIM2.
 
 What is the symbol of the handler for TIM2?
 
-  
-  
+\>  
+\>  
+\>
 
 What is the interrupt line number corresponding to TIM2?
 
-  
-  
+\>  
+\>  
+\>
 
 ### Enable the interrupt line for TIM2
 
@@ -147,7 +150,7 @@ LEDS 15..0 to visualise the timer interval. Use the function
 Build and flash the program and verify the LEDS blink in an interval of
 approximately two seconds.
 
-Now define a second variable in the section `my_var` to store a copy of
+Now define a second variable in the section `.my_var` to store a copy of
 the counter value. Load the counter value and store it in the second
 variable, then reset the counter to 0.
 

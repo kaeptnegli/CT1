@@ -29,9 +29,10 @@ and examine parameter passing in assembly.
 Write a subroutine to determine the highest value in a table of 32 bit
 signed integers.
 
-Open the provided program `searchmax`. The file `main.s` implements a
-test for your subroutine and does **not** require changes. Implement the
-subroutine `search_max` in the file `search_max.s`.
+Open the provided program `searchmax`. The file `./searchmax/src/main.s`
+implements a test for your subroutine and does **not** require changes.
+Implement the subroutine `search_max` in the file
+`./searchmax/src/search_max.s`.
 
 The address of the array to search is passed in `r0` and the length of
 the array in `r1`. The return value is stored in `r0`. The subroutine

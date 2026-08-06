@@ -77,9 +77,10 @@ information to be found on ennis:
 
 ## **Task 1:** Setup work your environment
 
-Follow the guide in the `ct1-students/laboratories/readme.md` and set up
-your work environment. You can either choose to work directly with the
-Makefiles, or install Visual Studio Code.
+Follow the guide in the `../readme.md` and set up your work environment,
+or if you choose to work with Keil, follow the instructions on [Ennis:
+Getting
+started](https://ennis.zhaw.ch/wiki/doku.php?id=software:start:getting_started).
 
 ## **Task 2:** Write your own C program
 
@@ -89,8 +90,9 @@ memory address and write the values to the associated LED address.
 ### Functions to read from and write to the memory
 
 The module `utils_ctboard` provides functions to access the memory. It
-contains interface declarations in the headerfile `utils_ctboard.h` and
-the implementation in the `utils_ctboard.c`.
+contains interface declarations in the headerfile
+`./src/utils_ctboard.h` and the implementation in the
+`./src/utils_ctboard.c`.
 
 Study the header file:
 
@@ -102,8 +104,10 @@ Add the module `utils_ctboard` to your C-project.
 
 > **Makefile (VSCode uses the Makefile)**
 >
-> - Add `utils_ctboard.c` to the variable `SRC` (list of file to
->   compile). Expand the variable using `SRC += <utils_ctboard.c>`.
+> - Add `utils_ctboard.c` to the variable `C_SRC` (list of file to
+>   compile, the path can be omitted, because of the variable `VPATH` in
+>   `../../common/root.mk`). Expand the variable using
+>   `C_SRC += <source_file.c>`.
 > - Import the module into your program with an `#include` statement.
 
 > **Keil**
@@ -135,8 +139,7 @@ Create an executable of your program, run the debugger and start the
 program. Check the correct function of your program with different
 positions of the dip switches.
 
-> - Read the `ct1-students/laboratories/readme.md` for instructions on
->   these steps.
+> - Read the `../readme.md` for instructions on these steps.
 > - Familiarise yourself with the features of the debugger like *Single
 >   Stepping* and *Breakpoints*.
 > - Check out the Register View. It displays the contents of the

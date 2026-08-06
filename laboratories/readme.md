@@ -3,6 +3,8 @@
 > Do **not** fork the repository, see `../readme.(md|pdf)` for
 > instructions on how to setup a private remote repository to work with.
 
+**If you choose to work with Keil, skip this document.**
+
 <!--toc:start-->
 
 - [CT1 with GNU assembly syntax](#ct1-with-gnu-assembly-syntax)
@@ -151,8 +153,8 @@ Install [Visual Studio Code](https://code.visualstudio.com/) (if not
 installed already).
 
 After installing Visual Studio Code set up the provided profile
-`common/ct.code-profile`. Start Visual Studio Code, click the settings
-button in the bottom-left corner, and select *Profiles*.
+`../common/ct.code-profile`. Start Visual Studio Code, click the
+settings button in the bottom-left corner, and select *Profiles*.
 
 <figure>
 <img src="./resources/vs-code/vsc-profile.png"
@@ -169,8 +171,7 @@ alt="VSCode profile import" />
 <figcaption aria-hidden="true">VSCode profile import</figcaption>
 </figure>
 
-Navigate to the local repository and select
-`laboratories/common/ct.code-profile`.
+Navigate to the local repository and select `../common/ct.code-profile`.
 
 <figure>
 <img src="./resources/vs-code/vsc-profile-path.png"
@@ -231,12 +232,12 @@ alt="MSYS2 terminal kill" />
 </figure>
 
 After the terminal has closed, reopen it. To install the required tools,
-a bash script is provided in `./common`.
+a bash script is provided in `../common`.
 
 Run the command below from the `laboratories` directory:
 
 ``` sh
-./common/msys_init.sh
+../common/msys_init.sh
 ```
 
 <figure>
@@ -298,7 +299,7 @@ Since you probably used `git` in `bash`, it is probably installed
 correctly too.
 
 To test the toolchain and `openocd`, connect a CT board and build/flash
-laboratory 2.
+laboratory `02-bit-manipulations`.
 
 # Workflow with Makefile
 
@@ -346,7 +347,7 @@ To change **focus** to another window, use the
 | `src` | displays source code, by default at the point of execution |
 
 > *NOTE:* For the labs the custom layout `ines` is provided. It is
-> defined in `./common/.gdbinit`.
+> defined in `../common/.gdbinit`.
 
 <figure>
 <img src="./resources/gdb/gdb-tui.png" alt="GDB layout ines" />

@@ -29,7 +29,7 @@ the output files created by the assembler/compiler and linker.
 
 The project consists of a library along with the corresponding header
 files. You must specify the correct locations of the header files in the
-makefile and add any missing `#include` directives in `main.c`.
+makefile and add any missing `#include` directives in `./src/main.c`.
 Furthermore, you need to specify the library to use in the linker
 options.
 
@@ -53,10 +53,10 @@ between libraries with and without debug symbols.
 Your first task is to make the program compile. Try building the program
 and interpret the compiler/linker error messages to locate the problem.
 
-Also see the task list in `main.c`.
+Also see the task list in `./src/main.c`.
 
 > This application is not just divided into modules, but also a library,
-> whose headers can be found in the directory `inc`. You need to tell
+> whose headers can be found in the directory `./inc`. You need to tell
 > your toolchain where to look for the headers.
 >
 > You also need to tell the toolchain what libaries to link against and
@@ -81,13 +81,13 @@ project settings in the field `Misc Controls`.
 To add the include path, extend the variable `INC_DIR`.
 
 In order to fix the linker error, you first need to build the library.
-Use the makefile in the directory `libctio` to build an archive with
+Use the makefile in the directory `./libctio` to build an archive with
 `make rebuild`. Follow the example of `libctboard` to add `libctio` to
 the linker command.
 
 > Add elements to a variable with `key += value`. Explore the file
-> `<ct-root-directory>/common/root.mk` to understand how the variables
-> `LIB_PATHS` and `LIB_NAMES` are used in the linker command.
+> `../../common/root.mk` to understand how the variables `LIB_PATHS` and
+> `LIB_NAMES` are used in the linker command.
 
 > Note that GCC automatically adds a ‘lib’ to library names.
 
@@ -105,10 +105,11 @@ the behaviour of the debugger on functions (`read8`, `write8`,
 First debug the program linked against `lib\read_write.lib`. What do you
 observe?
 
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>
 
 Now link the program against `lib_debug\read_write.lib` (change the
 entry in the `Misc Controls` field in the linker tab). Do not forget to
@@ -119,7 +120,7 @@ After you started the debugger you need to tell it, where to find the
 sources. To do so, enter the following command in the debuggers *command
 window*.
 
-`set src = C:\<path-to-laboratory>\keil\lib_debug_with_src`
+`set src = <path-to-laboratory>\keil\lib_debug_with_src`
 
 Keil can not handle spaces in the path, if your user name contains
 spaces, you will need to relocate the laboratory to a directory with no
@@ -127,11 +128,12 @@ spaces in its path.
 
 What do you observe and what is the cause for the different behaviour?
 
-  
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>
 
 ### Makefile workflow
 
@@ -142,28 +144,30 @@ What do you observe and what is the cause for the different behaviour?
 > command.
 
 Make sure you built `libctio` without debug symbols (make targets `all`,
-`build` or `rebuild` in directory `libctio/`). Rebuild your program
+`build` or `rebuild` in directory `./libctio`). Rebuild your program
 (`make rebuild` in current directory).
 
 Debug the program and document your observation.
 
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>
 
 Now recompile the library (libctio) with debug symbols. Use the make
-target `debug` in the directory `libctio/`. Do not forget to rebuild
+target `debug` in the directory `./libctio`. Do not forget to rebuild
 your program.
 
 Debug the program. What changed and what is the cause for the different
 behaviour?
 
-  
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>
 
 ## **Task 3:** Analysing symbols
 
@@ -227,13 +231,14 @@ Insert your answers in the table below.
 If you miss the header files for a library, could you write the headers
 yourself with the extracted symbol table?
 
-  
-  
-  
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>
 
 ### Makefile workflow
 
@@ -243,10 +248,10 @@ Object (`.o`) and library files (`.a`) and binaries (`.axf`) are all ELF
 files.
 
 Use the command below to extract the symbol tables from the files
-`obj/main.o`, `obj/toggle.o` and `libctio/libctio.a`.
+`./obj/main.o`, `./obj/toggle.o` and `./libctio/libctio.a`.
 
 ``` sh
-arm-none-eabi-readelf -s <path/to/elf>
+arm-none-eabi-readelf -s <path/to/elf-or-object>
 
 # example
 arm-none-eabi-readelf -s obj/main.o
@@ -301,13 +306,14 @@ Insert your answers in the table below.
 If you miss the header files for a library, could you write the headers
 yourself with the extracted symbol table?
 
-  
-  
-  
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>
 
 ## **Task 4:** Linker map
 
@@ -319,17 +325,18 @@ Analyse the map file. Explain the memory map using the map file. Search
 for the ‘memory map’ section. Where is the vector table, data,
 constants, code, etc. located?
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>
 
 ### Makefile workflow
 
@@ -337,17 +344,18 @@ Analyse the map file. Explain the memory map using the map file. Search
 for the ‘memory map’ section. Where is the vector table, data,
 constants, code, etc. located?
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>
 
 ## Grading
 

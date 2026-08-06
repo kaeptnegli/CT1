@@ -15,7 +15,7 @@
 
 In this lab you will use structured programming techniques to implement
 an assembly program. Depending on the state of button `T0`, the
-potentiometer `POT1` and the DIP switches `S[7..0]` are read and
+potentiometer `POT1` and the DIP switches `SW[7..0]` are read and
 compared. The results are displayed in various ways on the 7-segment
 display and the `LED[31..0]`.
 
@@ -37,7 +37,7 @@ assembly.
     green and the read ADC-value shall be displayed on the 7-segment
     display.
   - **If T0 is *not* pressed** the program shall read an 8-bit value
-    from DIP switches `S[7..0]`. The ADC value shall be subtracted from
+    from DIP switches `SW[7..0]`. The ADC value shall be subtracted from
     the DIP switch value. The resulting difference shall be displayed on
     the 7-segment display.
   - **If diff \>= 0** the background color of the LCD shall be set to
@@ -72,7 +72,7 @@ assembly.
 
 Extend the green branch (branch which sets the LCD backlight to green)
 of your diagram and assembly program (in that order). Display a LED bar
-on `LEDS 31..0`, whose length scales with the ADC value.
+on `LED[31..0]`, whose length scales with the ADC value.
 
     bar_length = (adc_value / 8) + 1
 

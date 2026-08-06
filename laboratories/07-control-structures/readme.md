@@ -35,9 +35,9 @@ the LEDs. Use the given project frame.
 The program shall meet the following requirements:
 
 - The first operand (op1) shall be entered through the DIP-switches
-  `S[15..8]`.
+  `SW[15..8]`.
 - The second operand (op2) shall be entered through the DIP-switches
-  `S[7..0]`.
+  `SW[7..0]`.
 - The 8 bit operands shall be zero-extended to 32 bit.
 - The operation shall be selected through the rotary switch, according
   to the table below.

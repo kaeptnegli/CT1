@@ -31,10 +31,9 @@ the memory and register content. You will trace the influence of several
 data transfer commands and their addressing modes with the remote
 debugger.
 
-> The file
-> `<ct-students-path>/instruction-reference/instruction-reference.pdf`
-> lists and explains the most important instructions (of the thumb
-> instruction set) and is rather handy for all future laboratories.
+> The file `../../instruction-reference/instruction-reference.pdf` lists
+> and explains the most important instructions (of the thumb instruction
+> set) and is rather handy for all future laboratories.
 >
 > It is also recommended to bring this document to all exams.
 
@@ -142,15 +141,17 @@ conversion.*
 The given program (`./src/transbf.s`) is split into three sections. What
 are the three sections and what are their properties?
 
-  
-  
+\>  
+\>  
+\>
 
 How many bytes does each section contain?
 
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>
 
 After assembling, each section begins at the address `0x0000_0000`. The
 physical addresses are assigned during the linking process.
@@ -184,8 +185,8 @@ section(s) on debugging in the rootlevel readme.
 
 ## **Task 3:** Linker tasks
 
-Open the file `bin/transbf.map` file in the text editor of your choice
-and search for the symbol `my_code`. The associated address needs to be
+Open the file `./bin/transbf.map` file in the text editor of your choice
+and search for the symbol `.my_code`. The associated address needs to be
 rounded to an even value.
 
 In **VS Code**, after starting the debugger, select the debug tab and
@@ -204,27 +205,22 @@ the initialisation code for the microcontroller.
 
 ## **Task 4:** Deviations
 
-Compared to the instruction reference the order of the two bytes of
-machine code is reversed. What could be the reason?
-
-  
-  
-
 Some bytes will be defined after the creation of the list file (by the
-linker). At these positions the memory content differs from the list
+linker). At these positions the memory contents differs from the list
 file. Find corresponding bytes! What could be the reason?
 
-  
-  
-  
-  
-  
-  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>  
+\>
 
 ## Data section (READ ONLY)
 
 The sample program defines several global variables in the data section
-`my_const`. The assembler directives `.word`, `.hword` and `.byte`
+`.my_const`. The assembler directives `.word`, `.hword` and `.byte`
 reserve memory. An assembler directive is a directive of the programmer
 for the translation program, the assembler. The assembler directive does
 not get translated into executable operation codes, i.e. there is no
@@ -236,9 +232,10 @@ The debugger will allocate the storage region of the read-only data
 section right after the read only code section. The starting address of
 this section is given by the first constant in the read only data
 section. I.e. the first constant is at label `addr_dip_switch`. Search
-the map file (`bin/transbf.map`) for the start address of the respective
-memory section and inspect the memory with the debugger. Fill in the
-following table with the values and start addresses of the constants.
+the map file (`./bin/transbf.map`) for the start address of the
+respective memory section and inspect the memory with the debugger. Fill
+in the following table with the values and start addresses of the
+constants.
 
 | **Variable name** | **Content** | **Start address** |
 |:------------------|:------------|:------------------|
@@ -251,19 +248,19 @@ following table with the values and start addresses of the constants.
 ## Data section (READ & WRITE)
 
 The sample program defines a global variable in the read/write data
-section `my_var`. The assembler directive `.space` reserves memory space
-and fills it with zero.
+section `.my_var`. The assembler directive `.space` reserves memory
+space and fills it with zero.
 
 The data sections are mapped to the physical RAM of the CT board
 starting at `0x2000_0000`. The stack is located after our custom data
-sections `my_var` and `my_const`. You find the respective information in
-the `bin/transbf.map` file by searching for the section `my_var`.
+sections `.my_var` and `.my_const`. You find the respective information
+in the `./bin/transbf.map` file by searching for the section `.my_var`.
 
 ## **Task 6:** Function of the program
 
-The given program `src/transbf.s` demonstrates different commands, used
-to load and store values. It shows how constants are defined and loaded,
-and how the load and store commands are used.
+The given program `./src/transbf.s` demonstrates different commands,
+used to load and store values. It shows how constants are defined and
+loaded, and how the load and store commands are used.
 
 Study the code in the list file. What are the results of the indicated
 instructions? Fill in the following table with the expected values of
