@@ -78,20 +78,12 @@ SECTIONS
     _etext = .;        /* define a global symbols at end of code */
   } >FLASH
 
-  .my_code :
-  {
-    . = ALIGN(4);
-    KEEP(*(.my_code)) /* Startup code */
-    . = ALIGN(4);
-  } >FLASH
-
   /* Constant data into "FLASH" Rom type memory */
   .rodata :
   {
     . = ALIGN(4);
     *(.rodata)         /* .rodata sections (constants, strings, etc.) */
     *(.rodata*)        /* .rodata* sections (constants, strings, etc.) */
-    *(.my_const)
     . = ALIGN(4);
   } >FLASH
 
@@ -152,7 +144,6 @@ SECTIONS
     *(.data*)          /* .data* sections */
     *(.RamFunc)        /* .RamFunc sections */
     *(.RamFunc*)       /* .RamFunc* sections */
-    *(.my_var)
 
     . = ALIGN(4);
     _edata = .;        /* define a global symbol at data end */

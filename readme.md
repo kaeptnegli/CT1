@@ -1,15 +1,17 @@
-# CT1 - Computer engineering
+# CT1: Computer engineering
 
 This repository contains the lectures, exercises and laboratories for
 computer engineering 1.
 
 **Do not fork this repository.**
-See chapter ["Forking" the repository](#forking-the-repository) for
-instructions on how to get a private copy of the repository.
+See chapter [Setting up a private
+repository](#setting-up-a-private-repository) for instructions on how to get a
+private copy of the repository.
 
 <!--toc:start-->
-- [CT1 - Computer engineering](#ct1-computer-engineering)
-  - ["Forking" the repository](#forking-the-repository)
+- [CT1: Computer engineering](#ct1-computer-engineering)
+  - [Terminology](#terminology)
+  - [Setting up a private repository](#setting-up-a-private-repository)
   - [File structure](#file-structure)
 <!--toc:end-->
 
@@ -21,7 +23,7 @@ instructions on how to get a private copy of the repository.
   setupspecific parameters.
 
 
-## "Forking" the repository
+## Setting up a private repository
 
 It is sensible to work with Git and have a private copy of this
 repository.

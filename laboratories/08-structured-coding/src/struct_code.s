@@ -59,7 +59,7 @@
 // ------------------------------------------------------------------
 // -- constant declarations
 // ------------------------------------------------------------------
-.section .my_const, "a"
+.section .rodata
 DISPLAY_BIT:    .string     "Bit "
 DISPLAY_2_BIT:  .string     "2"
 DISPLAY_4_BIT:  .string     "4"
@@ -70,7 +70,7 @@ DISPLAY_8_BIT:  .string     "8"
 // ------------------------------------------------------------------
 // -- code
 // ------------------------------------------------------------------
-.section .my_code, "ax"
+.section .text
 
 .type main, %function
 main:

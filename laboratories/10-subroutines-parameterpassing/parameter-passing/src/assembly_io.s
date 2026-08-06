@@ -30,7 +30,7 @@
 // END: To be programmed
 
 
-.section .my_code,"ax"
+.section .text
 
 // write_word
 // - address in R0

@@ -52,9 +52,11 @@ detected through repetitive queries. This type of query is called
 polling. Therefore, the main program has to contain an infinite loop:
 
 ``` c
-int main(void) {
+int main(void)
+{
     /* initialization */
-    for (;;) {
+    while ( 1 )
+    {
         /* application */
     }
 }
@@ -77,10 +79,13 @@ information to be found on ennis:
 
 ## **Task 1:** Setup work your environment
 
-Follow the guide in the `../readme.md` and set up your work environment,
-or if you choose to work with Keil, follow the instructions on [Ennis:
-Getting
-started](https://ennis.zhaw.ch/wiki/doku.php?id=software:start:getting_started).
+Visit [Ennis (CT
+wiki)](https://ennis.zhaw.ch/wiki/doku.php?id=software:start:getting_started)
+for instructions on how to install Keil.
+
+Alternatively you can follow the guide in
+`../../common/install-gnu-toolchain.md` to set up your system for a
+workflow without Keil.
 
 ## **Task 2:** Write your own C program
 

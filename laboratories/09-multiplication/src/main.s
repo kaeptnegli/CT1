@@ -46,15 +46,11 @@
 .equ MSG_PASS,          0x8c889292  // 7 segment low-active bits of "PASS"
 .equ MSG_CLEAR,         0x7f7f7f7f  // 7 segment low-active bits of dots only
 
-// -------------------------------------------------------------------
-// -- constants
-// -------------------------------------------------------------------
-.section .my_const, "a"
 
 // -------------------------------------------------------------------
 // -- code
 // -------------------------------------------------------------------
-.section .my_code, "ax"
+.section .text
 
 .type main, %function
 main:

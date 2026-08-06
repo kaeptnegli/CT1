@@ -25,6 +25,8 @@
 .global set_sfr
 .global clear_sfr
 
+
+.section .text
 // -----------------------------------------------------------------------------
 // Set bit of a register (SFR, word -> 32 bit)
 // - Address of register in R6

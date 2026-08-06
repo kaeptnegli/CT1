@@ -25,16 +25,16 @@
 .global search_max
 
 // -------------------------------------------------------------------
-// -- Constants
+// -- Defines
 // -------------------------------------------------------------------
-.section .my_code,"ax"
-
 // STUDENTS: To be programmed
 
 
 
 // END: To be programmed
 
+
+.section .text
 
 // Searchmax
 // - tableaddress in R0

@@ -55,7 +55,7 @@
 // -----------------------------------------------------------------------------
 // Initialize EXTI
 // -----------------------------------------------------------------------------
-.section .my_code,"ax"
+.section .text
 
 .type init_measurement, %function
 init_measurement:
