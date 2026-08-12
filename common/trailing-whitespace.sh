@@ -132,7 +132,7 @@ function remove-whitespace {
 
     if [[ -n "${help}" ]] || [[ -z "${file_args[@]} ${path_args[@]}" ]]; then
         cat <<EOF
-Usage: remove-whitespace [-h] [-n] path [path]
+Usage: remove-whitespace [-hnsu] [path] [file]
 
 Remove trailing whitespace from plain text files.
 Path points to either a file or directory, or both.

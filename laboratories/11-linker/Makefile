@@ -7,8 +7,10 @@ INC_DIR     := $(SRC_DIR)
 
 OBJ_DIR     := ./obj
 BIN_DIR     := ./bin
-LIB_DIR     := ../../libctboard
 COMMON_DIR  := ../../common
+LIB_DIR     := $(COMMON_DIR)/libctboard
+
+MD_FILES    := linker.md
 
 AS_SRC      :=
 

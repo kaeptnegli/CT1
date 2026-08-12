@@ -1,14 +1,12 @@
-SHELL       := /usr/bin/env bash
+SHELL           := /usr/bin/env bash
 
-MD_FILES    += readme.md
+PDF_FILES       := $(MD_FILES:.md=.pdf)
+GFM_FILES       := $(MD_FILES:.md=.gfm)
 
-PDF_FILES   := $(MD_FILES:.md=.pdf)
-GFM_FILES   := $(MD_FILES:.md=.gfm)
-
-VERBOSITY   :=
+VERBOSITY       :=
 
 
-.PHONY: all clean clean_all test pdf repdf remove_pdf debug_pdf gfm
+.PHONY: all clean clean_all test pdf repdf remove_pdf debug_pdf gfm release
 
 
 clean_all:: remove_pdf
@@ -27,7 +25,16 @@ remove_pdf:
 debug_pdf: VERBOSITY := --verbose
 debug_pdf: $(PDF_FILES)
 
+
 gfm: $(GFM_FILES)
+
+
+# this target is specifically for the release scripts
+# it relies on the scripts doing a hard reset of the
+# repository afterwards
+release: repdf gfm
+	$(foreach item, $(MD_FILES), mv $(item:.md=.gfm) $(item);)
+
 
 %.pdf: %.md
 	pandoc \

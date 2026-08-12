@@ -18,7 +18,6 @@ lib/*
 # ignore generated pdfs and github flavoured markdown tests
 # if pdfs are needed in the repository,
 # force add the with `git add -f`
-*.pdf
 *.gfm
 
 # ignore flag files (required by clangd)
