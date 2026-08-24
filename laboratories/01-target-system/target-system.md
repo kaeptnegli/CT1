@@ -83,9 +83,8 @@ Visit [Ennis (CT
 wiki)](https://ennis.zhaw.ch/wiki/doku.php?id=software:start:getting_started)
 for instructions on how to install Keil.
 
-Alternatively you can follow the guide in
-`../../common/install-gnu-toolchain.md` to set up your system for a
-workflow without Keil.
+Alternatively you can follow the guide in `../install-gnu-toolchain.md`
+to set up your system for a workflow without Keil.
 
 ## **Task 2:** Write your own C program
 

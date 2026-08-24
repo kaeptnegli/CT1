@@ -39,7 +39,7 @@ release: repdf gfm
 %.pdf: %.md
 	pandoc \
         --pdf-engine pdflatex \
-        --listings \
+        --syntax-highlighting=idiomatic \
         --template $(COMMON_DIR)/template.tex \
         --lua-filter=$(COMMON_DIR)/horizontal-rule.lua \
         -f markdown \

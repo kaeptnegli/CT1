@@ -23,11 +23,6 @@ lib/*
 # ignore flag files (required by clangd)
 compile_flags.txt
 
-# ignore archives
-*.tar
-*.tar.*
-*.zip
-
 # ignore inferior document types
 *.doc
 *.docx

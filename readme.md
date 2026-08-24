@@ -3,7 +3,7 @@
 This repository contains the lectures, exercises and laboratories for
 computer engineering 1.
 
-**Do not fork this repository.**  
+**Do not fork this repository.**\
 See chapter [Setting up a private
 repository](#setting-up-a-private-repository) for instructions on how to
 get a private copy of the repository.

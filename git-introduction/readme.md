@@ -110,7 +110,7 @@ default branch name and whether to merge or rebase. The value of editor
 is the launch command of the desired editor. Below is an excerpt from my
 configuration as an example.
 
-``` git
+```
 [core]
     editor = nvim
 
@@ -190,7 +190,6 @@ With `git commit` you can commit the staged changes. This will open the
 configured editor. Enter your commit message at the very top, save and
 close the file.
 
-
     # Please enter the commit message for your changes. Lines starting
     # with '#' will be ignored, and an empty message aborts the commit.
     #
@@ -236,7 +235,7 @@ effect on its parent or sibling directories.
 
 Here is an example of a `.gitignore`:
 
-``` git
+```
 # ignore build directory (and all its contents)
 build/
 

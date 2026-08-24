@@ -105,10 +105,10 @@ the behaviour of the debugger on functions (`read8`, `write8`,
 First debug the program linked against `lib\read_write.lib`. What do you
 observe?
 
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
 \>
 
 Now link the program against `lib_debug\read_write.lib` (change the
@@ -128,11 +128,11 @@ spaces in its path.
 
 What do you observe and what is the cause for the different behaviour?
 
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ### Makefile workflow
@@ -149,10 +149,10 @@ Make sure you built `libctio` without debug symbols (make targets `all`,
 
 Debug the program and document your observation.
 
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
 \>
 
 Now recompile the library (libctio) with debug symbols. Use the make
@@ -162,11 +162,11 @@ your program.
 Debug the program. What changed and what is the cause for the different
 behaviour?
 
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ## **Task 3:** Analysing symbols
@@ -231,13 +231,13 @@ Insert your answers in the table below.
 If you miss the header files for a library, could you write the headers
 yourself with the extracted symbol table?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ### Makefile workflow
@@ -306,13 +306,13 @@ Insert your answers in the table below.
 If you miss the header files for a library, could you write the headers
 yourself with the extracted symbol table?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ## **Task 4:** Linker map
@@ -325,17 +325,17 @@ Analyse the map file. Explain the memory map using the map file. Search
 for the ‘memory map’ section. Where is the vector table, data,
 constants, code, etc. located?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ### Makefile workflow
@@ -344,17 +344,17 @@ Analyse the map file. Explain the memory map using the map file. Search
 for the ‘memory map’ section. Where is the vector table, data,
 constants, code, etc. located?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ## Grading

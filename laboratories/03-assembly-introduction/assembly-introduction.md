@@ -141,22 +141,22 @@ conversion.*
 The given program (`./src/transbf.s`) is split into three sections. What
 are the three sections and what are their properties?
 
-\>  
-\>  
+\>\
+\>\
 \>
 
 How many bytes does each section contain?
 
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
 \>
 
 After assembling, each section begins at the address `0x0000_0000`. The
 physical addresses are assigned during the linking process.
 
-**Uploading onto the Target Hardware**  
+**Uploading onto the Target Hardware**\
 Switch on the target hardware. Ensure that the USB connection on the
 left side of the target hardware is connected to the host computer.
 
@@ -197,7 +197,7 @@ function code section in the field ‘Address’.
 
 Can you locate the operation codes from the list file in memory?
 
-**Load Address**  
+**Load Address**\
 By default the debugger loads the program at address `0x0800_0000`. At
 this address the flash memory is located on the target hardware. The
 memory space from here to the beginning of the main function contains
@@ -209,12 +209,12 @@ Some bytes will be defined after the creation of the list file (by the
 linker). At these positions the memory contents differs from the list
 file. Find corresponding bytes! What could be the reason?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ## Data section (READ ONLY)

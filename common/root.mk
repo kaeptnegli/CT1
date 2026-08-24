@@ -131,16 +131,17 @@ $(BIN): $(ELF)
            -j .stack \
            -j .heap \
            -j .text \
+           -j .bss \
+           -j .data \
+           -j .rodata\
            -j .my_code \
            -j .my_const \
            -j .my_var \
-           -j .rodata\
            -j .ARM.extab \
            -j .ARM \
            -j .preinit_array \
            -j .init_array \
            -j .fini_array \
-           -j .data \
            -j .ccmram \
            -j .ARM.extab \
            -j .ARM \

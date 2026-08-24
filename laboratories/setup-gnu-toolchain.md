@@ -444,41 +444,39 @@ equivalents to **step** in/over/out.
 
 Use `x` (examine) to **view memory** contents.
 
-``` gdb
-# synopsis
-x[/format] <address>
+    # synopsis
+    x[/format] <address>
 
-# example without format
-x 0x20000000
+    # example without format
+    x 0x20000000
 
-# example with format
-# prints 4 bytes starting at 0x2000_0000 in hexadecimal format
-x/4xb 0x20000000
+    # example with format
+    # prints 4 bytes starting at 0x2000_0000 in hexadecimal format
+    x/4xb 0x20000000
 
-# format:
-# x/nfs
-#
-# n = number of elements to print
-#
-# f = format to print:
-#       o = octal
-#       x = hexadecimal
-#       d = decimal
-#       u = unsigned decimal
-#       t = binary
-#       f = float
-#       a = address
-#       i = instruction
-#       c = char
-#       s = string
-#       z = hex, zero padded on the left
-#
-# s = size of one element:
-#       b = byte (8 bits)
-#       h = halfword (16 bits)
-#       w = word (32 bits)
-#       g = giant (64 bits)
-```
+    # format:
+    # x/nfs
+    #
+    # n = number of elements to print
+    #
+    # f = format to print:
+    #       o = octal
+    #       x = hexadecimal
+    #       d = decimal
+    #       u = unsigned decimal
+    #       t = binary
+    #       f = float
+    #       a = address
+    #       i = instruction
+    #       c = char
+    #       s = string
+    #       z = hex, zero padded on the left
+    #
+    # s = size of one element:
+    #       b = byte (8 bits)
+    #       h = halfword (16 bits)
+    #       w = word (32 bits)
+    #       g = giant (64 bits)
 
 | **position**    | **description**                      |
 |:----------------|:-------------------------------------|
