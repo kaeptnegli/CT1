@@ -73,3 +73,66 @@ operation:
 
 
 
+        // END: To be programmed
+
+        pop     {r4-r7, pc}            // return r0
+
+        .balign 4
+
+// -------------------------------------------------------------------
+// -- Constants
+// -------------------------------------------------------------------
+.section .rodata
+
+values:
+        .hword      0x0001
+        .hword      0xFFFF
+        .word       0xFFFFFFFF
+
+        .hword      0x0017
+        .hword      0x004A
+        .word       0x000006A6
+
+        .hword      0xFFFF
+        .hword      0xFFFF
+        .word       0x00000001
+
+        .hword      0x73A4
+        .hword      0x4C28
+        .word       0x2266C1A0
+
+        .hword      0x43CC
+        .hword      0xC3BF
+        .word       0xF00AF934
+
+        .hword      0xE372
+        .hword      0x0234
+        .word       0xFFC11728
+
+        .hword      0xDD22
+        .hword      0xBCDE
+        .word       0x0924BB7C
+
+        .hword      0x7FFF
+        .hword      0x7FFF
+        .word       0x3FFF0001
+
+title:
+        .string     "mul_s16"
+
+        .balign 4
+
+// -------------------------------------------------------------------
+// -- Variables
+// -------------------------------------------------------------------
+.section .bss
+
+result_table:
+        .space      NR_OF_TESTS*4
+
+        .balign 4
+
+// -------------------------------------------------------------------
+// -- End of file
+// -------------------------------------------------------------------
+.end

@@ -42,7 +42,7 @@ int main(void)
     /// END: To be programmed
 
     while (1) {
-        // ---------- Task 3.1 ----------
+        // ---------- Task 1 ----------
         led_value = read_byte(ADDR_DIP_SWITCH_7_0);
 
         /// STUDENTS: To be programmed
@@ -53,7 +53,7 @@ int main(void)
 
         write_byte(ADDR_LED_7_0, led_value);
 
-        // ---------- Task 3.2 and 3.3 ----------
+        // ---------- Task 2 and Task 3 ----------
         /// STUDENTS: To be programmed
 
 
