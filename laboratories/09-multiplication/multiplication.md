@@ -38,13 +38,13 @@ The length of the output of a multiplication can be determined by adding
 the lengths of the inputs. This holds true regardless of the
 calculations radix and can be tested quite easily. In a decimal system
 for example the highest number with two digits is `99`. The maximum
-product of two digit numbers is therefore $99 \times 99 = 9'801$. We can
-repeat this experiment for a two and three digit number:
-$99 \times 999 = 98'901$.
+product of two digit numbers is therefore $`99 \times 99 = 9'801`$. We
+can repeat this experiment for a two and three digit number:
+$`99 \times 999 = 98'901`$.
 
 But what is multiplication? Let us take a look at the following example:
-$3 \times 12$. It means that we add twelve three times. This is already
-a method to implement multiplication.
+$`3 \times 12`$. It means that we add twelve three times. This is
+already a method to implement multiplication.
 
 This method is not very practical for bigger numbers as the number of
 algorithm iterations (order) depends on the value of the multiplier. The
@@ -52,7 +52,7 @@ order of long multiplication only depends on the number of digits of the
 multiplier, which scales a lot slower and can be implemented in hardware
 for single cycle multiplication.
 
-Here is an example for $23 \times 74$:
+Here is an example for $`23 \times 74`$:
 
         23 * 74
         -------
@@ -142,8 +142,8 @@ your code and ensure it passes the test.
 
 ## Grading
 
-| **Criteria**                                                                            | **Weight** |
-|:----------------------------------------------------------------------------------------|:----------:|
-| The program meets the requirements of [Task 1](#task-1-unsigned-16-bit-multiplication). |    2/4     |
-| The program meets the requirements of [Task 2](#task-2-signed-16-bit-multiplication).   |    1/4     |
-| The program meets the requirements of [Task 3](#task-3-unsigned-32-bit-multiplication). |    1/4     |
+| **Criteria** | **Weight** |
+|:---|:--:|
+| The program meets the requirements of [Task 1](#task-1-unsigned-16-bit-multiplication). | 2/4 |
+| The program meets the requirements of [Task 2](#task-2-signed-16-bit-multiplication). | 1/4 |
+| The program meets the requirements of [Task 3](#task-3-unsigned-32-bit-multiplication). | 1/4 |

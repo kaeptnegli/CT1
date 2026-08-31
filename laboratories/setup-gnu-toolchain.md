@@ -137,32 +137,41 @@ Start Visual Studio Code, click the settings button in the bottom left
 corner, and select *Profiles*.
 
 <figure>
+
 <img src="./resources/vs-code/vscode-profile.png"
 alt="VSCode profile settings" />
 <figcaption aria-hidden="true">
+
 VSCode profile settings
 </figcaption>
+
 </figure>
 
 After the Profiles window has opened, click the arrow next to the *New
 Profile* button and select *Import Profile…*.
 
 <figure>
+
 <img src="./resources/vs-code/vscode-profile-import.png"
 alt="VSCode profile import" />
 <figcaption aria-hidden="true">
+
 VSCode profile import
 </figcaption>
+
 </figure>
 
 Navigate to the local repository and select `../common/ct.code-profile`.
 
 <figure>
+
 <img src="./resources/vs-code/vscode-profile-path.png"
 alt="VSCode profile path" />
 <figcaption aria-hidden="true">
+
 VSCode profile path
 </figcaption>
+
 </figure>
 
 Before creating the profile, make sure that the settings and extensions
@@ -170,11 +179,14 @@ from the CT profile are selected for import. The other options can be
 chosen as needed.
 
 <figure>
+
 <img src="./resources/vs-code/vscode-profile-create.png"
 alt="VSCode profile create" />
 <figcaption aria-hidden="true">
+
 VSCode profile create
 </figcaption>
+
 </figure>
 
 After clicking *Create*, Visual Studio Code imports the selected
@@ -260,22 +272,28 @@ Using a different installation directory may cause path-related issues
 later.
 
 <figure>
+
 <img src="./resources/msys2/msys-installation.png"
 alt="Installation path of MSYS2" />
 <figcaption aria-hidden="true">
+
 Installation path of MSYS2
 </figcaption>
+
 </figure>
 
 After the installation has completed, the checkbox to start MSYS2 can be
 unchecked.
 
 <figure>
+
 <img src="./resources/msys2/msys-postinstallation.png"
 alt="Installation of MSYS2 finished" />
 <figcaption aria-hidden="true">
+
 Installation of MSYS2 finished
 </figcaption>
+
 </figure>
 
 ### Installing Visual Studio Code
@@ -297,32 +315,41 @@ After installing Visual Studio Code set up the provided profile
 settings button in the bottom-left corner, and select *Profiles*.
 
 <figure>
+
 <img src="./resources/vs-code/vscode-profile.png"
 alt="VSCode profile settings" />
 <figcaption aria-hidden="true">
+
 VSCode profile settings
 </figcaption>
+
 </figure>
 
 After the Profiles window has opened, click the arrow next to the *New
 Profile* button and select *Import Profile…*.
 
 <figure>
+
 <img src="./resources/vs-code/vscode-profile-import.png"
 alt="VSCode profile import" />
 <figcaption aria-hidden="true">
+
 VSCode profile import
 </figcaption>
+
 </figure>
 
 Navigate to the local repository and select `../common/ct.code-profile`.
 
 <figure>
+
 <img src="./resources/vs-code/vscode-profile-path.png"
 alt="VSCode profile path" />
 <figcaption aria-hidden="true">
+
 VSCode profile path
 </figcaption>
+
 </figure>
 
 Before creating the profile, make sure that the settings and extensions
@@ -330,11 +357,14 @@ from the CT profile are selected for import. The other options can be
 chosen as needed.
 
 <figure>
+
 <img src="./resources/vs-code/vscode-profile-create.png"
 alt="VSCode profile create" />
 <figcaption aria-hidden="true">
+
 VSCode profile create
 </figcaption>
+
 </figure>
 
 After clicking *Create*, Visual Studio Code imports the selected
@@ -362,11 +392,14 @@ pacman -Syu
 ```
 
 <figure>
+
 <img src="./resources/msys2/msys-system-upgrade.png"
 alt="MSYS2 system upgrade" />
 <figcaption aria-hidden="true">
+
 MSYS2 system upgrade
 </figcaption>
+
 </figure>
 
 If asked to proceed with the installation, accept. When no input is
@@ -376,11 +409,14 @@ During the upgrade, `pacman` may ask to close the terminal to finish the
 process. Accept again.
 
 <figure>
+
 <img src="./resources/msys2/msys-terminal-kill.png"
 alt="MSYS2 terminal kill" />
 <figcaption aria-hidden="true">
+
 MSYS2 terminal kill
 </figcaption>
+
 </figure>
 
 After the terminal has closed, reopen it. To install the required tools,
@@ -393,11 +429,14 @@ Run the command below from the `laboratories` directory:
 ```
 
 <figure>
+
 <img src="./resources/msys2/msys-bash-script.png"
 alt="MSYS2 bash script" />
 <figcaption aria-hidden="true">
+
 MSYS2 bash script
 </figcaption>
+
 </figure>
 
 After the installation has completed, compiling, flashing, and debugging
@@ -416,11 +455,14 @@ options. Additional components can be selected if needed for other
 purposes.
 
 <figure>
+
 <img src="./resources/git/git-windows-components.png"
 alt="components to install" />
 <figcaption aria-hidden="true">
+
 components to install
 </figcaption>
+
 </figure>
 
 An editor has to be selected during installation. Since Visual Studio
@@ -429,11 +471,14 @@ Alternatively, editors such as Vim can be used, the default is vi, which
 might not even be installed.
 
 <figure>
+
 <img src="./resources/git/git-windows-editor.png"
 alt="git editor selection" />
 <figcaption aria-hidden="true">
+
 git editor selection
 </figcaption>
+
 </figure>
 
 If needed, Git Credential Manager can be enabled. When enabled, Git can
@@ -444,11 +489,14 @@ A common alternative is to use an SSH key with no password. This is not
 recommended, but many developers do it anyways.
 
 <figure>
+
 <img src="./resources/git/git-credentials.png"
 alt="git credentials option" />
 <figcaption aria-hidden="true">
+
 git credentials option
 </figcaption>
+
 </figure>
 
 # Testing setup
@@ -488,10 +536,13 @@ separate shell instance with the Make target `launchgdb`, this will open
 GDB as interactive command line interface.
 
 <figure>
+
 <img src="./resources/gdb/starting-gdb.png" alt="freshly opened GDB" />
 <figcaption aria-hidden="true">
+
 freshly opened GDB
 </figcaption>
+
 </figure>
 
 The CLI is used to interact with GDB, with the `layout` command you can
@@ -501,21 +552,24 @@ windows, which may lead to unexpected behaviour of keys like the arrows.
 To change **focus** to another window, use the
 `focus [asm|cmd|regs|src]` command.
 
-| **Window** | **Description**                                                                                     |
-|:-----------|:----------------------------------------------------------------------------------------------------|
-| `asm`      | shows the disassembly of the program                                                                |
-| `cmd`      | interactive window used to control GDB, but also print output of commands like `info`, `print`, `x` |
-| `regs`     | shows the contents of the processors register                                                       |
-| `src`      | displays source code, by default at the point of execution                                          |
+| **Window** | **Description** |
+|:---|:---|
+| `asm` | shows the disassembly of the program |
+| `cmd` | interactive window used to control GDB, but also print output of commands like `info`, `print`, `x` |
+| `regs` | shows the contents of the processors register |
+| `src` | displays source code, by default at the point of execution |
 
 > *NOTE:* For the labs the custom layout `ines` is provided. It is
 > defined in `../common/.gdbinit`.
 
 <figure>
+
 <img src="./resources/gdb/gdb-tui.png" alt="GDB layout ines" />
 <figcaption aria-hidden="true">
+
 GDB layout <code>ines</code>
 </figcaption>
+
 </figure>
 
 > *NOTE:* GDB supports completions with `tab`.
@@ -539,41 +593,39 @@ equivalents to **step** in/over/out.
 
 Use `x` (examine) to **view memory** contents.
 
-``` gdb
-# synopsis
-x[/format] <address>
+    # synopsis
+    x[/format] <address>
 
-# example without format
-x 0x20000000
+    # example without format
+    x 0x20000000
 
-# example with format
-# prints 4 bytes starting at 0x2000_0000 in hexadecimal format
-x/4xb 0x20000000
+    # example with format
+    # prints 4 bytes starting at 0x2000_0000 in hexadecimal format
+    x/4xb 0x20000000
 
-# format:
-# x/nfs
-#
-# n = number of elements to print
-#
-# f = format to print:
-#       o = octal
-#       x = hexadecimal
-#       d = decimal
-#       u = unsigned decimal
-#       t = binary
-#       f = float
-#       a = address
-#       i = instruction
-#       c = char
-#       s = string
-#       z = hex, zero padded on the left
-#
-# s = size of one element:
-#       b = byte (8 bits)
-#       h = halfword (16 bits)
-#       w = word (32 bits)
-#       g = giant (64 bits)
-```
+    # format:
+    # x/nfs
+    #
+    # n = number of elements to print
+    #
+    # f = format to print:
+    #       o = octal
+    #       x = hexadecimal
+    #       d = decimal
+    #       u = unsigned decimal
+    #       t = binary
+    #       f = float
+    #       a = address
+    #       i = instruction
+    #       c = char
+    #       s = string
+    #       z = hex, zero padded on the left
+    #
+    # s = size of one element:
+    #       b = byte (8 bits)
+    #       h = halfword (16 bits)
+    #       w = word (32 bits)
+    #       g = giant (64 bits)
 
 | **position**    | **description**                      |
 |:----------------|:-------------------------------------|
@@ -605,11 +657,14 @@ icon or by pressing `Ctrl+Shift+D`. Select the desired target next to
 the green play button, then press the play button or `F5`.
 
 <figure>
+
 <img src="./resources/vs-code/vscode-debug-window.png"
 alt="Debug Window" />
 <figcaption aria-hidden="true">
+
 Debug Window
 </figcaption>
+
 </figure>
 
 > *Note:* Registers and variables are only updated when the program is

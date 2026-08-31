@@ -151,9 +151,9 @@ The working programs have to be presented to the lecturer. The student
 has to understand the solution and source code and has to be able to
 explain it to the lecturer.
 
-| **Criteria**                                                        | **Weight** |
-|:--------------------------------------------------------------------|:----------:|
-| [Task 1: IO of Table Values](#task-1-input-and-output-table-values) |   2 / 4    |
-| [Task 2: Halfword Table](#task-2-variant-with-halfword-table)       |   2 / 4    |
+| **Criteria** | **Weight** |
+|:---|:--:|
+| [Task 1: IO of Table Values](#task-1-input-and-output-table-values) | 2 / 4 |
+| [Task 2: Halfword Table](#task-2-variant-with-halfword-table) | 2 / 4 |
 
 <!-- Links -->

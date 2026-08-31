@@ -99,9 +99,9 @@ following table, i.e. sum, difference and flags.
 Once the tables are completed write the program and compare its output
 against the tables.
 
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
 \>
 
 <figure>
@@ -142,9 +142,9 @@ The working programs have to be presented to the lecturer. The student
 has to understand the solution / source code and has to be able to
 explain it to the lecturer.
 
-| **Criteria**                                                                          | **Weight** |
-|:--------------------------------------------------------------------------------------|:----------:|
-| The program meets the requirements described in [Task 1](#task-1-sum-and-difference). |   2 / 4    |
-| The program meets the requirements described in [Task 2](#task-2-64-bit-addition).    |   2 / 4    |
+| **Criteria** | **Weight** |
+|:---|:--:|
+| The program meets the requirements described in [Task 1](#task-1-sum-and-difference). | 2 / 4 |
+| The program meets the requirements described in [Task 2](#task-2-64-bit-addition). | 2 / 4 |
 
 <!-- links -->

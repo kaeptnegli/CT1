@@ -110,7 +110,7 @@ default branch name and whether to merge or rebase. The value of editor
 is the launch command of the desired editor. Below is an excerpt from my
 configuration as an example.
 
-``` git
+```
 [core]
     editor = nvim
 
@@ -190,7 +190,6 @@ With `git commit` you can commit the staged changes. This will open the
 configured editor. Enter your commit message at the very top, save and
 close the file.
 
-
     # Please enter the commit message for your changes. Lines starting
     # with '#' will be ignored, and an empty message aborts the commit.
     #
@@ -236,7 +235,7 @@ effect on its parent or sibling directories.
 
 Here is an example of a `.gitignore`:
 
-``` git
+```
 # ignore build directory (and all its contents)
 build/
 
@@ -627,13 +626,13 @@ if interested:
 
 ## Glossary
 
-| **Term**             | **Description**                                                                                                                                                                                                                                                                                                                                                 |
-|:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| branch               | Separate named reference originating from an older commit on the source branch. A branch can originate from main/master (the trunk in the tree analogy) or any other branch.                                                                                                                                                                                    |
-| commit               | Repository state defined as delta to its parent. Each commit is identified by its commit hash, a 40 byte long string of alphanumeric characters. The hash can be used in many Git commands, e.g. `diff`, `reset` or `checkout`. A commit usually has one parent, but can have an arbitrary number of children, one for each branch originating from the commit. |
-| commit reference     | Named pointer to a specific commit. An example would be `HEAD`, which points to the currently checked out commit. Branches and tags are references too.                                                                                                                                                                                                         |
-| head                 | Pointer to commit currently checked out. On remote it will usually point to *main*. With `git checkout` one can checkout a to e.g. test something or make new branch. In such a case the head would point to that commit.                                                                                                                                       |
-| index / staging area | `git add` puts file/directories (rather the changes made to them) into a cache, called *index* or *staging area* (in arguments it is also called chache). `git commit` adds the changes in that cache to the history with a hash, a descriptoin and a few more information about the commit.                                                                    |
-| working tree         | Local copy of the repository. a working tree is clean if it has no uncommitted changes.                                                                                                                                                                                                                                                                         |
+| **Term** | **Description** |
+|:---|:---|
+| branch | Separate named reference originating from an older commit on the source branch. A branch can originate from main/master (the trunk in the tree analogy) or any other branch. |
+| commit | Repository state defined as delta to its parent. Each commit is identified by its commit hash, a 40 byte long string of alphanumeric characters. The hash can be used in many Git commands, e.g. `diff`, `reset` or `checkout`. A commit usually has one parent, but can have an arbitrary number of children, one for each branch originating from the commit. |
+| commit reference | Named pointer to a specific commit. An example would be `HEAD`, which points to the currently checked out commit. Branches and tags are references too. |
+| head | Pointer to commit currently checked out. On remote it will usually point to *main*. With `git checkout` one can checkout a to e.g. test something or make new branch. In such a case the head would point to that commit. |
+| index / staging area | `git add` puts file/directories (rather the changes made to them) into a cache, called *index* or *staging area* (in arguments it is also called chache). `git commit` adds the changes in that cache to the history with a hash, a descriptoin and a few more information about the commit. |
+| working tree | Local copy of the repository. a working tree is clean if it has no uncommitted changes. |
 
 <!-- links -->

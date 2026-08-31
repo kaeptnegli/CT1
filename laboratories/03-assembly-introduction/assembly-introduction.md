@@ -79,13 +79,13 @@ conversion.*
 <col style="width: 65%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;"><strong>Assembly Code</strong></th>
 <th style="text-align: left;"><strong>Operation Code</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;"><strong>Example</strong><br />
 <br />
 <code>movs r1, #0xFE</code></td>
@@ -97,7 +97,7 @@ conversion.*
 <code></code><br />
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;"><code>movs r2, #MY_CONST</code></td>
 <td style="text-align: left;"><code></code><br />
 <code></code><br />
@@ -106,7 +106,7 @@ conversion.*
 <code></code><br />
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;"><code>mov r11, r2</code></td>
 <td style="text-align: left;"><code></code><br />
 <code></code><br />
@@ -115,7 +115,7 @@ conversion.*
 <code></code><br />
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;"><code>ldr r0, [r7]</code></td>
 <td style="text-align: left;"><code></code><br />
 <code></code><br />
@@ -124,7 +124,7 @@ conversion.*
 <code></code><br />
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;"><code>str r3, [r7, r6]</code></td>
 <td style="text-align: left;"><code></code><br />
 <code></code><br />
@@ -141,22 +141,22 @@ conversion.*
 The given program (`./src/transbf.s`) is split into three sections. What
 are the three sections and what are their properties?
 
-\>  
-\>  
+\>\
+\>\
 \>
 
 How many bytes does each section contain?
 
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
 \>
 
 After assembling, each section begins at the address `0x0000_0000`. The
 physical addresses are assigned during the linking process.
 
-**Uploading onto the Target Hardware**  
+**Uploading onto the Target Hardware**\
 Switch on the target hardware. Ensure that the USB connection on the
 left side of the target hardware is connected to the host computer.
 
@@ -197,7 +197,7 @@ function code section in the field ‘Address’.
 
 Can you locate the operation codes from the list file in memory?
 
-**Load Address**  
+**Load Address**\
 By default the debugger loads the program at address `0x0800_0000`. At
 this address the flash memory is located on the target hardware. The
 memory space from here to the beginning of the main function contains
@@ -209,12 +209,12 @@ Some bytes will be defined after the creation of the list file (by the
 linker). At these positions the memory contents differs from the list
 file. Find corresponding bytes! What could be the reason?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ## Data section (READ ONLY)
@@ -267,14 +267,14 @@ instructions? Fill in the following table with the expected values of
 the target registers after the corresponding line of code has been
 executed.
 
-| **Line**     | **Instruction**                    | **Content of target register** |
-|:-------------|:-----------------------------------|:-------------------------------|
-| `*** A1 ***` | `movs  r1,  #0xFE`                 | ``                             |
-| `*** A2 ***` | `mov   r11, r2`                    |                                |
-| `*** A3 ***` | `ldr   r3,  =ADDR_DIP_SWITCH_31_0` |                                |
-| `*** A5 ***` | `ldr   r7,  =addr_dip_switch`      |                                |
-| `*** A6 ***` | `ldr   r1,  [r7, #4]`              |                                |
-| `*** A7 ***` | `ldr   r3,  [r7, r6]`              |                                |
+| **Line** | **Instruction** | **Content of target register** |
+|:---|:---|:---|
+| `*** A1 ***` | `movs  r1,  #0xFE` | `` |
+| `*** A2 ***` | `mov   r11, r2` |  |
+| `*** A3 ***` | `ldr   r3,  =ADDR_DIP_SWITCH_31_0` |  |
+| `*** A5 ***` | `ldr   r7,  =addr_dip_switch` |  |
+| `*** A6 ***` | `ldr   r1,  [r7, #4]` |  |
+| `*** A7 ***` | `ldr   r3,  [r7, r6]` |  |
 
 ## **Task 7:** Verifying the table
 
@@ -285,9 +285,9 @@ expectations?
 
 ## Grading
 
-| **Criteria**                                                                                       | **Weight** |
-|:---------------------------------------------------------------------------------------------------|:----------:|
-| The tables are filled in correctly and the questions are answered. You can explain your reasoning. |   3 / 4    |
-| You briefly explain how you used the debugger and can answer questions about it.                   |   1 / 4    |
+| **Criteria** | **Weight** |
+|:---|:--:|
+| The tables are filled in correctly and the questions are answered. You can explain your reasoning. | 3 / 4 |
+| You briefly explain how you used the debugger and can answer questions about it. | 1 / 4 |
 
 <!-- links -->

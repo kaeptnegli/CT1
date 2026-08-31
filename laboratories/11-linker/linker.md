@@ -105,10 +105,10 @@ the behaviour of the debugger on functions (`read8`, `write8`,
 First debug the program linked against `lib\read_write.lib`. What do you
 observe?
 
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
 \>
 
 Now link the program against `lib_debug\read_write.lib` (change the
@@ -128,11 +128,11 @@ spaces in its path.
 
 What do you observe and what is the cause for the different behaviour?
 
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ### Makefile workflow
@@ -149,10 +149,10 @@ Make sure you built `libctio` without debug symbols (make targets `all`,
 
 Debug the program and document your observation.
 
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
 \>
 
 Now recompile the library (libctio) with debug symbols. Use the make
@@ -162,11 +162,11 @@ your program.
 Debug the program. What changed and what is the cause for the different
 behaviour?
 
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ## **Task 3:** Analysing symbols
@@ -195,14 +195,14 @@ Insert your answers in the table below.
 <col style="width: 32%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;"><strong>local symbols</strong></th>
 <th style="text-align: left;"><strong>imported symbols</strong></th>
 <th style="text-align: left;"><strong>exported symbols</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;"><code></code><br />
 <code></code><br />
 <code></code><br />
@@ -231,13 +231,13 @@ Insert your answers in the table below.
 If you miss the header files for a library, could you write the headers
 yourself with the extracted symbol table?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ### Makefile workflow
@@ -267,14 +267,14 @@ Insert your answers in the table below.
 <col style="width: 32%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;"><strong>local symbols</strong></th>
 <th style="text-align: left;"><strong>imported symbols</strong></th>
 <th style="text-align: left;"><strong>exported symbols</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;"><code></code><br />
 <code></code><br />
 <code></code><br />
@@ -306,13 +306,13 @@ Insert your answers in the table below.
 If you miss the header files for a library, could you write the headers
 yourself with the extracted symbol table?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ## **Task 4:** Linker map
@@ -325,17 +325,17 @@ Analyse the map file. Explain the memory map using the map file. Search
 for the ‘memory map’ section. Where is the vector table, data,
 constants, code, etc. located?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ### Makefile workflow
@@ -344,17 +344,17 @@ Analyse the map file. Explain the memory map using the map file. Search
 for the ‘memory map’ section. Where is the vector table, data,
 constants, code, etc. located?
 
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
-\>  
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
+\>\
 \>
 
 ## Grading
@@ -363,11 +363,11 @@ The working programs have to be presented to the lecturer. The student
 has to understand the solution / source code and has to be able to
 explain it to the lecturer.
 
-| **Criteria**                                                                                                   | **Weight** |
-|:---------------------------------------------------------------------------------------------------------------|:----------:|
-| [Task 1](#task-1-interpreting-compiler-and-linker-errors) completed. program compiles and behaves as described |    1/4     |
-| Student answered the questions and is able explain their answers for [Task 2](#task-2-debugging).              |    1/4     |
-| Student answered the questions and is able explain their answers for [Task 3](#task-3-analysing-symbols).      |    1/4     |
-| Student answered the questions and is able explain their answers for [Task 4](#task-4-linker-map).             |    1/4     |
+| **Criteria** | **Weight** |
+|:---|:--:|
+| [Task 1](#task-1-interpreting-compiler-and-linker-errors) completed. program compiles and behaves as described | 1/4 |
+| Student answered the questions and is able explain their answers for [Task 2](#task-2-debugging). | 1/4 |
+| Student answered the questions and is able explain their answers for [Task 3](#task-3-analysing-symbols). | 1/4 |
+| Student answered the questions and is able explain their answers for [Task 4](#task-4-linker-map). | 1/4 |
 
 <!-- links -->

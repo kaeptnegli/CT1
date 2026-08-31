@@ -76,7 +76,7 @@ The working programs have to be presented to the lecturer. The student
 has to understand the solution / source code and has to be able to
 explain it to the lecturer.
 
-| **Criteria**                                                                      | **Weight** |
-|:----------------------------------------------------------------------------------|:----------:|
-| The program meets the requirements of [Task 1](#task-1-search-maximum).           |    2/4     |
-| The program meets the requirements of [Task 2](#task-2-io-functions-in-assembly). |    2/4     |
+| **Criteria** | **Weight** |
+|:---|:--:|
+| The program meets the requirements of [Task 1](#task-1-search-maximum). | 2/4 |
+| The program meets the requirements of [Task 2](#task-2-io-functions-in-assembly). | 2/4 |

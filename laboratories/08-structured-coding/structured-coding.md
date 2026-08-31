@@ -103,11 +103,11 @@ the second line of the LCD.
 
 ## Grading
 
-| **Criteria**                                                                          | **Weight** |
-|:--------------------------------------------------------------------------------------|:----------:|
-| The diagram and program meet the requirements of [Task 1](#task-1-program-structure). |   1 / 4    |
-| Program meets the functionality added in [Task 2](#task-2-led-bar).                   |   1 / 4    |
-| Program meets the functionality added in [Task 3](#task-3-size-display).              |   1 / 4    |
-| Program meets the functionality added in [Task 4](#task-4-count-zeroes).              |   1 / 4    |
+| **Criteria** | **Weight** |
+|:---|:--:|
+| The diagram and program meet the requirements of [Task 1](#task-1-program-structure). | 1 / 4 |
+| Program meets the functionality added in [Task 2](#task-2-led-bar). | 1 / 4 |
+| Program meets the functionality added in [Task 3](#task-3-size-display). | 1 / 4 |
+| Program meets the functionality added in [Task 4](#task-4-count-zeroes). | 1 / 4 |
 
 <!-- links -->

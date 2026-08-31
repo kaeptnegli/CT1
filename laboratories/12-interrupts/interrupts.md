@@ -61,8 +61,8 @@ source for the interrupt line `EXTI0`.
 What is the symbol (in this case function name) of the associated
 handler?
 
-\>  
-\>  
+\>\
+\>\
 \>
 
 What is the corresponding interrupt request number (IRQn)? You can
@@ -70,8 +70,8 @@ either count entries in the vector table, or look up the table in the
 microcontrollers (`STM32F429ZI`) reference manual online, which has a
 column with the irq numbers.
 
-\>  
-\>  
+\>\
+\>\
 \>
 
 ### Enable the interrupt line for EXTI0
@@ -126,14 +126,14 @@ the handler for interrupt TIM2.
 
 What is the symbol of the handler for TIM2?
 
-\>  
-\>  
+\>\
+\>\
 \>
 
 What is the interrupt line number corresponding to TIM2?
 
-\>  
-\>  
+\>\
+\>\
 \>
 
 ### Enable the interrupt line for TIM2
@@ -165,9 +165,9 @@ The working programs have to be presented to the lecturer. The student
 has to understand the solution / source code and has to be able to
 explain it to the lecturer.
 
-| **Criteria**                                                                   | **Weight** |
-|:-------------------------------------------------------------------------------|:----------:|
-| The program meets the requirements of [Task 1](#task-1-user-button-interrupt). |    1/4     |
-| The program meets the requirements of [Task 2](#task-2-timer-interrupt).       |    3/4     |
+| **Criteria** | **Weight** |
+|:---|:--:|
+| The program meets the requirements of [Task 1](#task-1-user-button-interrupt). | 1/4 |
+| The program meets the requirements of [Task 2](#task-2-timer-interrupt). | 3/4 |
 
 <!-- links -->
