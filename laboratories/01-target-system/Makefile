@@ -16,7 +16,7 @@ C_DEF       := PLATFORM_M0
 C_INC       := ./src \
                $(LIB_DIR)/device/include/ \
                $(LIB_DIR)/hal/include/
-C_SRC       := main.c
+C_SRC       := main.c utils_ctboard.c
 
 include     $(COMMON_DIR)/root.mk
 include     $(COMMON_DIR)/pdf.mk
