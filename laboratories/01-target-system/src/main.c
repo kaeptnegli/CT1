@@ -32,10 +32,10 @@ int main(void)
 	uint8_t num = 0x0;
 	while(1)
 	{
-	num = read_byte(ADDR_DIP_SWITCH_P11) & 0x0F;
-	write_byte(ADDR_LED_7_0, num);
-	write_byte(ADDR_DISPLAY_DS0, ~display_num[num]);
-	write_byte(ADDR_DISPLAY_DS1, ~display_num[num]);
+	   num = read_byte(ADDR_DIP_SWITCH_P11) & 0x0F;
+	   write_byte(ADDR_LED_7_0, num);
+	   write_byte(ADDR_DISPLAY_DS0, ~display_num[num]);
+	   write_byte(ADDR_DISPLAY_DS1, ~display_num[num]);
 	}
 }
 
